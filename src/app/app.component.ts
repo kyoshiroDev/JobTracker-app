@@ -7,18 +7,16 @@ import { HeaderComponent } from './features/dashboard/header/header.component';
   selector: 'fdw-root',
   imports: [SidebarComponent, RouterOutlet, HeaderComponent],
   template: `
-    <div class="flex">
+    <div class="flex max-h-screen">
       <!-- Sidebar fixe -->
       <fdw-sidebar />
 
       <!-- Header -->
-      <div class="flex flex-1 flex-col">
+      <div class="flex flex-1 flex-col bg-[#ECF0F1]">
         <fdw-header />
 
         <!-- Contenu des pages selon les routes -->
-        <div class="p-6">
-          <router-outlet />
-        </div>
+        <router-outlet></router-outlet>
       </div>
     </div>
   `,

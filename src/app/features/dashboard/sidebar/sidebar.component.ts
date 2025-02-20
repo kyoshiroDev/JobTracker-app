@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
     <ul>
       @for(menu of sidebar(); track menu.id){
         <li class="py-2 pl-4 pr-12 my-2.5 hover:bg-[#00AAFF] cursor-pointer rounded-md">
-          <a routerLink={{menu.routerLink}}>{{ menu.name }}</a>
+          <a routerLink={{menu.routerLink}} >{{ menu.name }}</a>
         </li>
       }
     </ul>
@@ -20,8 +20,8 @@ import { RouterLink } from '@angular/router';
 })
 export class SidebarComponent {
   protected readonly sidebar = signal<Sidebarmenu[]>([
-    {id:1, name: "Dashboard", routerLink:"/"},
-    {id:2, name: "Mes Candidatures", routerLink:"Mes-Candidatures"},
-    {id:3, name: "Offres d'Emploi", routerLink:"Offres-d-emploi"},
+    {id:1, name: "📊 Dashboard", routerLink:"/"},
+    {id:2, name: "📂 Mes Candidatures", routerLink:"Mes-Candidatures"},
+    {id:3, name: "🔍 Offres d'Emploi", routerLink:"Offres-d-emploi"},
   ])
 }
