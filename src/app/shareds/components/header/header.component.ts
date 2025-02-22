@@ -5,10 +5,8 @@ import { NotificationsComponent } from './notifications/notifications.component'
   selector: 'fdw-header',
   imports: [NotificationsComponent],
   template: `
-    <header
-      class="flex h-20 bg-[#0167A3] text-[#ffffff] justify-between items-center"
-    >
-      <h1 class=" px-4 text-xl font-semibold">Hello {{ name() }}</h1>
+    <header>
+      <h2 class=" px-4 text-xl">Hello {{ name() }}</h2>
       <div class="flex p-4 w-[500px] justify-around items-center">
         <fdw-notifications />
         <img

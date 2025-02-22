@@ -4,24 +4,24 @@ import { Component, signal } from '@angular/core';
   selector: 'fdw-candidatures-recentes',
   imports: [],
   template: `
-      <div class="w-full bg-white p-5 rounded-xl  drop-shadow-lg">
-        <h3 class="text-[#008DDA] font-bold text-xl pb-3">Candidatures Récentes</h3>
-        <table class="table-fixed w-full border-collapse border border-gray-400">
-          <thead class="bg-[#0167A3] h-[40px] text-white ">
+      <div class="table-container">
+        <h3>Candidatures Récentes</h3>
+        <table>
+          <thead>
             <tr>
-              <th class="border border-gray-300">Poste</th>
-              <th class="border border-gray-300">Entreprise</th>
-              <th class="border border-gray-300">Date</th>
-              <th class="border border-gray-300">Statut</th>
+              <th>Poste</th>
+              <th>Entreprise</th>
+              <th>Date</th>
+              <th>Statut</th>
             </tr>
           </thead>
           <tbody>
             @for(candidature of candidatures(); track candidature.id){
-            <tr class="text-left h-[40px]">
-              <td class="border border-gray-300 pl-3">{{ candidature.poste }}</td>
-              <td class="border border-gray-300 pl-3">{{ candidature.entreprise }}</td>
-              <td class="border border-gray-300 pl-3">{{ candidature.date }}</td>
-              <td class="border border-gray-300 pl-3">{{ candidature.statut }}</td>
+            <tr>
+              <td>{{ candidature.poste }}</td>
+              <td>{{ candidature.entreprise }}</td>
+              <td>{{ candidature.date }}</td>
+              <td>{{ candidature.statut }}</td>
             </tr>
             }
           </tbody>
@@ -65,6 +65,6 @@ export class CandidaturesRecentesComponent {
       entreprise: 'Netflix',
       date: '28/02/2025',
       statut: 'Rejetées',
-    },
+    }
   ]);
 }

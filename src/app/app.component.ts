@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { SidebarComponent } from './features/dashboard/sidebar/sidebar.component';
+import { SidebarComponent } from './shareds/components/sidebar/sidebar.component';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './features/dashboard/header/header.component';
+import { HeaderComponent } from './shareds/components/header/header.component';
 
 @Component({
   selector: 'fdw-root',
@@ -12,7 +12,7 @@ import { HeaderComponent } from './features/dashboard/header/header.component';
       <fdw-sidebar />
 
       <!-- Header -->
-      <div class="flex flex-1 flex-col bg-[#ECF0F1]">
+      <div class="page-container">
         <fdw-header />
 
         <!-- Contenu des pages selon les routes -->

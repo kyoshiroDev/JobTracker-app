@@ -1,2 +1,120 @@
 /* Import Tailwind CSS */
 @import "tailwindcss";
+
+@theme {
+    /* Colors */
+  --color-JobTracker-blue: rgb(1, 103, 163);
+  --color-JobTracker-side: rgb(1, 79, 134);
+  --color-JobTracker-side-hover: rgb(0, 170, 255);
+  --color-JobTracker-white: rgb(255, 255, 255);
+  --color-JobTracker-gray: rgb(236, 240, 241);
+}
+
+/* Side Bar */
+.side-bar {
+  @apply bg-JobTracker-side 
+  h-screen w-[300px] 
+  flex 
+  flex-col 
+  gap-8 
+  justify-start 
+  items-center 
+  text-JobTracker-white text-xl;
+}
+
+.side-li {
+  @apply py-2 
+    pl-4 
+    pr-12 
+    my-2.5 
+    hover:bg-JobTracker-side-hover 
+    cursor-pointer 
+    rounded-md;
+}
+
+/* Header */
+header {
+  @apply 
+  flex 
+  h-20 
+  bg-JobTracker-blue 
+  text-JobTracker-white 
+  justify-between 
+  items-center;
+}
+
+/* Pages container */
+.page-container {
+  @apply flex flex-1 flex-col bg-JobTracker-gray;
+}
+
+/* Title */
+h1,
+h2 {
+  @apply text-JobTracker-white font-semibold;
+}
+
+h3 {
+  @apply text-JobTracker-blue font-bold text-xl pb-3;
+}
+
+/* Dashboard widgets */
+
+/* Suivi candidature */
+.suivi-candidature-container {
+  @apply flex flex-col 
+  bg-JobTracker-white 
+  font-semibold 
+  w-[300px] 
+  justify-center 
+  items-center 
+  gap-2 
+  rounded-2xl 
+  drop-shadow-lg;
+}
+
+/* Candidatures récentes */
+.table-container {
+  @apply max-w-[92%] m-auto bg-JobTracker-white p-5 rounded-xl  drop-shadow-lg;
+}
+table {
+  @apply table-fixed w-full border-collapse border border-JobTracker-gray;
+}
+
+thead {
+  @apply bg-JobTracker-blue h-[40px] text-JobTracker-white text-left;
+}
+
+th {
+  @apply border border-JobTracker-gray pl-5;
+}
+
+tr {
+  @apply text-center h-[40px];
+}
+
+td {
+  @apply border border-JobTracker-gray pl-3;
+}
+
+/* Tâches à faire */
+.liste-tache-container {
+  @apply w-[46%] ml-[65px] bg-JobTracker-white p-5 rounded-xl  drop-shadow-lg;
+}
+
+.tache-container {
+  @apply 
+  flex 
+  items-center 
+  max-h-[30px] 
+  p-5 
+  border-l-5 
+  border 
+  border-b-JobTracker-gray
+  border-t-JobTracker-gray
+  border-r-JobTracker-gray
+  border-JobTracker-blue
+  m-2 
+  rounded-br-lg 
+  rounded-tr-lg;
+}
