@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 @theme {
-    /* Colors */
+  /* Colors */
   --color-JobTracker-blue: rgb(1, 103, 163);
   --color-JobTracker-side: rgb(1, 79, 134);
   --color-JobTracker-side-hover: rgb(0, 170, 255);
@@ -12,9 +12,9 @@
 
 /* Side Bar */
 .side-bar {
-  @apply bg-JobTracker-side 
-  h-screen w-[300px] 
-  flex 
+  @apply bg-JobTracker-side min-h-screen w-[300px] 
+  hidden
+  lg:flex 
   flex-col 
   gap-8 
   justify-start 
@@ -32,10 +32,13 @@
     rounded-md;
 }
 
+.active-link {
+  @apply bg-JobTracker-side-hover;
+}
+
 /* Header */
 header {
-  @apply 
-  flex 
+  @apply flex 
   h-20 
   bg-JobTracker-blue 
   text-JobTracker-white 
@@ -56,6 +59,14 @@ h2 {
 
 h3 {
   @apply text-JobTracker-blue font-bold text-xl pb-3;
+}
+
+/* Button Add */
+.buttonAdd {
+  @apply flex justify-center items-center text-7xl 
+  text-JobTracker-gray bg-JobTracker-side rounded-full 
+  p-5 w-20 h-20 cursor-pointer 
+  hover:bg-JobTracker-side-hover fixed bottom-8 right-5;
 }
 
 /* Dashboard widgets */
@@ -103,8 +114,7 @@ td {
 }
 
 .tache-container {
-  @apply 
-  flex 
+  @apply flex 
   items-center 
   max-h-[30px] 
   p-5 
@@ -117,4 +127,9 @@ td {
   m-2 
   rounded-br-lg 
   rounded-tr-lg;
+}
+
+/* Annonce */
+.annonce {
+  @apply h-[800px] overflow-auto grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4 items-center text-center p-5;
 }

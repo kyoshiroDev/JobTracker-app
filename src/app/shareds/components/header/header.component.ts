@@ -6,15 +6,15 @@ import { NotificationsComponent } from './notifications/notifications.component'
   imports: [NotificationsComponent],
   template: `
     <header>
-      <h2 class=" px-4 text-xl">Hello {{ name() }}</h2>
-      <div class="flex p-4 w-[500px] justify-around items-center">
-        <fdw-notifications />
+      <div class="flex justify-center items-center gap-5 pl-5">
         <img
           src="../avatar.webp"
           alt="Avatar"
           class="max-h-[70px] rounded-full"
         />
+        <h2 class=" px-4 text-xl">Hello {{ name() }}</h2>
       </div>
+      <fdw-notifications />
     </header>
   `,
 })

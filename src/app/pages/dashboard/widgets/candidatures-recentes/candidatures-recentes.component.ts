@@ -1,8 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, Signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AnnoncesService } from '../../../../shareds/services/annonces/annonces.service';
+import { Annonce } from '../../../../shareds/models/annonce';
 
 @Component({
   selector: 'fdw-candidatures-recentes',
-  imports: [],
+  imports: [CommonModule],
   template: `
       <div class="table-container">
         <h3>Candidatures Récentes</h3>
@@ -16,12 +19,12 @@ import { Component, signal } from '@angular/core';
             </tr>
           </thead>
           <tbody>
-            @for(candidature of candidatures(); track candidature.id){
+            @for(annonce of annonces(); track annonce.id){
             <tr>
-              <td>{{ candidature.poste }}</td>
-              <td>{{ candidature.entreprise }}</td>
-              <td>{{ candidature.date }}</td>
-              <td>{{ candidature.statut }}</td>
+              <td>{{ annonce.poste }}</td>
+              <td>{{ annonce.entreprise }}</td>
+              <td>{{ annonce.createdAT | date:'dd/MM/yyyy' }}</td>
+              <td>{{ annonce.status }}</td>
             </tr>
             }
           </tbody>
@@ -30,41 +33,7 @@ import { Component, signal } from '@angular/core';
   `,
 })
 export class CandidaturesRecentesComponent {
-  protected readonly candidatures = signal([
-    {
-      id: 1,
-      poste: 'développeur front-end Angular',
-      entreprise: 'Google',
-      date: '10/02/2025',
-      statut: 'En attente',
-    },
-    {
-      id: 2,
-      poste: 'développeur front-end NextJs',
-      entreprise: 'Facebook',
-      date: '15/02/2025',
-      statut: 'Entretien',
-    },
-    {
-      id: 3,
-      poste: 'développeur front-end',
-      entreprise: 'Amazon',
-      date: '20/02/2025',
-      statut: 'En attente',
-    },
-    {
-      id: 4,
-      poste: 'développeur back-end NestJs',
-      entreprise: 'Prestashop',
-      date: '22/02/2025',
-      statut: 'À relancer',
-    },
-    {
-      id: 5,
-      poste: 'développeur back-end Express',
-      entreprise: 'Netflix',
-      date: '28/02/2025',
-      statut: 'Rejetées',
-    }
-  ]);
+  private readonly annoncesService = inject(AnnoncesService)
+
+  protected readonly annonces: Signal<Annonce[]> = this.annoncesService.getAll()
 }
