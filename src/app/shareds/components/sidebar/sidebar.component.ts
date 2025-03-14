@@ -25,7 +25,7 @@ export class SidebarComponent {
   protected readonly sidebar = signal<Sidebarmenu[]>([
     {id:1, name: "📊 Dashboard", routerLink:"/"},
     {id:2, name: "📂 Mes Candidatures", routerLink:"candidatures"},
-    {id:3, name: "📝 Ma TodoList", routerLink:"todoliste"},
+    //{id:3, name: "📝 Ma TodoList", routerLink:"todoliste"},
     //{id:4, name: "🔍 Offres d'Emploi", routerLink:"Offres-d-emploi"},
     //{id:5, name: "⚙️ Parametre", routerLink:"setting"},
   ])

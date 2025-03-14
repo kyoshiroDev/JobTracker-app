@@ -1,5 +1,6 @@
 import { computed, Injectable, signal, Signal } from '@angular/core';
 import { Annonce } from '../../models/annonce';
+import { StatusConfig } from '../../models/statusConfig.model';
 
 @Injectable({
   providedIn: 'root',
@@ -73,5 +74,5 @@ export class AnnoncesService {
       acc.set(annonce.status, count + 1);
       return acc;
     }, new Map<string, number>());
-  })
+  });
 }

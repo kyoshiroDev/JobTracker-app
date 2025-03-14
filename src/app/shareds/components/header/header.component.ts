@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { NotificationsComponent } from './notifications/notifications.component';
+//import { NotificationsComponent } from './notifications/notifications.component';
 
 @Component({
   selector: 'fdw-header',
-  imports: [NotificationsComponent],
+  imports: [/*NotificationsComponent*/],
   template: `
     <header>
       <div class="flex justify-center items-center gap-5 pl-5">
@@ -14,7 +14,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
         />
         <h2 class=" px-4 text-xl">Hello {{ name() }}</h2>
       </div>
-      <fdw-notifications />
+      <!--<fdw-notifications />-->
     </header>
   `,
 })
