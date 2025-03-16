@@ -1,7 +1,23 @@
-import { Component, EventEmitter, inject, input, output } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  Component,
+  effect,
+  inject,
+  input,
+  output,
+  OutputEmitterRef,
+  signal,
+} from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { STATUS_COLOR } from '../../../../shareds/tokens/statusColor-token';
 import { Annonce } from '../../../../shareds/models/annonce';
+import { AnnonceFormSearch } from '../../../../shareds/models/annonceForm';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'fdw-form-search',
@@ -29,35 +45,40 @@ import { Annonce } from '../../../../shareds/models/annonce';
           class="w-1/6 p-2 border rounded-lg h-[42px] appearance-none"
         >
           <option value="" disabled selected>Choisissez une entreprise</option>
-          @for (annonce of annonce(); track annonce.id) {
+          @for (annonce of annonces(); track annonce.id) {
           <option [value]="annonce.entreprise">{{ annonce.entreprise }}</option>
           }
         </select>
 
         <select
+          formControlName="ville"
           class="w-1/6 p-2 border rounded-lg focus:ring focus:ring-blue-300 h-[42px] appearance-none"
         >
-        <option value="" disabled selected>Choisissez une localisation</option>
-          @for (annonce of annonce(); track annonce.id) {
-          <option>{{ annonce.ville }}</option>
+          <option value="" disabled selected>
+            Choisissez une localisation
+          </option>
+          @for (annonce of annonces(); track annonce.id) {
+          <option [value]="annonce.ville">{{ annonce.ville }}</option>
           }
         </select>
 
         <select
+          formControlName="salaire"
           class="w-1/6 p-2 border rounded-lg focus:ring focus:ring-blue-300 h-[42px] appearance-none"
         >
-        <option value="" disabled selected>Choisissez un revenu</option>
-          @for (annonce of annonce(); track annonce.id) {
-          <option>{{ annonce.salaire }} €</option>
+          <option value="null" disabled selected>Choisissez un revenu</option>
+          @for (annonce of annonces(); track annonce.id) {
+          <option [value]="annonce.salaire">{{ annonce.salaire }} €</option>
           }
         </select>
 
         <select
+          formControlName="status"
           class="w-1/6 p-2 border rounded-lg focus:ring focus:ring-blue-300 h-[42px] appearance-none"
         >
-        <option value="" disabled selected>Choisissez un statut</option>
+          <option value="" disabled selected>Choisissez un statut</option>
           @for (status of status; track status.label) {
-          <option>{{ status.label }}</option>
+          <option [value]="status.label">{{ status.label }}</option>
           }
         </select>
       </form>
@@ -68,16 +89,14 @@ export class FormSearchComponent {
   readonly status = inject(STATUS_COLOR);
   readonly formBuilder = inject(FormBuilder);
 
-  readonly annonce = input.required<Annonce[]>();
-  /** Émetteur de filtres mis à jour */
-  filtersChange = output();
+  readonly annonces = input.required<Annonce[]>();
+  readonly formValueChange: OutputEmitterRef<AnnonceFormSearch> = output();
 
-  researchForm: FormGroup = this.formBuilder.group({
-    poste: <string>'',
-    entreprise: <string> '',
-    ville: <string> '',
-    salaire: <string> '',
-    status:<string>''
+  researchForm = new FormGroup<AnnonceFormSearch>({
+    poste: new FormControl<string | null>(''),
+    entreprise: new FormControl<string | null>(''),
+    ville: new FormControl<string | null>(''),
+    salaire: new FormControl<number | null>(null),
+    status: new FormControl<string | null>(''),
   });
-
 }
