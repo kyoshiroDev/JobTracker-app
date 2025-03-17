@@ -1,10 +1,10 @@
-import { FormControl } from "@angular/forms";
+import { FormControl } from '@angular/forms';
 
 export interface AnnonceFormSearch {
   poste: FormControl<string | null>;
   entreprise: FormControl<string | null>;
   ville: FormControl<string | null>;
-  salaire: FormControl<number| null>;
+  salaire: FormControl<number | null>;
   status: FormControl<string | null>;
 }
 

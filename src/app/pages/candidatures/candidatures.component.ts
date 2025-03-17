@@ -1,11 +1,4 @@
-import {
-  Component,
-  computed,
-  inject,
-  signal,
-  Signal,
-  ViewChild,
-} from '@angular/core';
+import { Component, inject, Signal } from '@angular/core';
 import { ButtonComponent } from '../../shareds/components/button/button.component';
 import { CandidatureComponent } from './components/candidature/candidature.component';
 import { AnnoncesService } from '../../shareds/services/annonces/annonces.service';
@@ -16,7 +9,10 @@ import { FormSearchComponent } from './components/form-search/form-search.compon
   selector: 'fdw-candidatures',
   imports: [ButtonComponent, CandidatureComponent, FormSearchComponent],
   template: `
-    <fdw-form-search [annonces]="annonces()" />
+    <fdw-form-search
+      [annonces]="annonces()"
+      (formValue)="getAnnonceByResearch($event)"
+    />
     <div class="grid grid-cols-2 gap-6 p-8">
       @for (annonce of annonces(); track annonce.id) {
       <fdw-candidature [annonce]="annonce" />
@@ -30,4 +26,8 @@ export class CandidaturesComponent {
 
   protected readonly annonces: Signal<Annonce[]> =
     this.annoncesService.getAll();
+
+  getAnnonceByResearch(data: FormSearchComponent['researchForm']['value']) {
+    console.log(data);
+  }
 }

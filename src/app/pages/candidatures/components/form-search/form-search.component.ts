@@ -1,23 +1,12 @@
+import { Component,inject, input, output } from '@angular/core';
 import {
-  Component,
-  effect,
-  inject,
-  input,
-  output,
-  OutputEmitterRef,
-  signal,
-} from '@angular/core';
-import {
-  FormBuilder,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
-  Validators,
 } from '@angular/forms';
 import { STATUS_COLOR } from '../../../../shareds/tokens/statusColor-token';
 import { Annonce } from '../../../../shareds/models/annonce';
 import { AnnonceFormSearch } from '../../../../shareds/models/annonceForm';
-import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'fdw-form-search',
@@ -28,6 +17,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
         RECHERCHER
       </h4>
       <form
+        (change)="formValue.emit(this.researchForm.value)"
         [formGroup]="researchForm"
         class="bg-white p-4 rounded-lg shadow-md flex gap-2 items-center w-full"
       >
@@ -87,16 +77,15 @@ import { toSignal } from '@angular/core/rxjs-interop';
 })
 export class FormSearchComponent {
   readonly status = inject(STATUS_COLOR);
-  readonly formBuilder = inject(FormBuilder);
 
   readonly annonces = input.required<Annonce[]>();
-  readonly formValueChange: OutputEmitterRef<AnnonceFormSearch> = output();
+  readonly formValue = output<FormSearchComponent['researchForm']['value']>();
 
   researchForm = new FormGroup<AnnonceFormSearch>({
-    poste: new FormControl<string | null>(''),
-    entreprise: new FormControl<string | null>(''),
-    ville: new FormControl<string | null>(''),
-    salaire: new FormControl<number | null>(null),
-    status: new FormControl<string | null>(''),
+    poste: new FormControl(''),
+    entreprise: new FormControl(''),
+    ville: new FormControl(''),
+    salaire: new FormControl(null),
+    status: new FormControl(''),
   });
 }
