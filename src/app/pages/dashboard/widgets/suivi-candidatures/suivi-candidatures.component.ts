@@ -7,7 +7,7 @@ import { STATUS_COLOR } from '../../../../shareds/tokens/statusColor-token';
   selector: 'fdw-suivi-candidatures',
   imports: [CommonModule],
   template: `
-    <div class="flex justify-center gap-20 h-[90px] max-w-screen">
+    <div class="flex justify-center gap-20 h-[90px] max-w-screen px-4">
       @for(status of statusConfigs; track status.label){
       <div class="suivi-candidature-container">
         <h3 class="text-3xl">{{ status.label }}</h3>

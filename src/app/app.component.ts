@@ -7,7 +7,7 @@ import { HeaderComponent } from './shareds/components/header/header.component';
   selector: 'fdw-root',
   imports: [SidebarComponent, RouterOutlet, HeaderComponent],
   template: `
-    <div class="flex min-h-dvh">
+    <div class="flex h-dvh ">
       <!-- Sidebar fixe -->
       <fdw-sidebar />
 
