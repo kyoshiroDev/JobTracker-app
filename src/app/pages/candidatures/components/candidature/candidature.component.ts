@@ -8,7 +8,7 @@ import { AnnonceFormSearch } from '../../../../shareds/models/annonceForm';
   imports: [],
   template: `
     <a
-      class="flex gap-3 bg-JobTracker-white rounded-md p-4 shadow-md cursor-pointer hover:scale-102 transition-transform duration-500 ease-in-out"
+      class="flex flex-col items-center xl:flex-row min-h-[152px] xl:text-left gap-1 bg-JobTracker-white rounded-md p-4 shadow-md cursor-pointer hover:scale-102 transition-transform duration-500 ease-in-out"
     >
       <div
         class="w-[100px] flex flex-col justify-center text-2xl text-JobTracker-blue font-semibold"
@@ -26,7 +26,7 @@ import { AnnonceFormSearch } from '../../../../shareds/models/annonceForm';
           {{ annonce().ville }}
         </p>
       </div>
-      <div class="flex items-center w-[100px] text-JobTracker-blue">
+      <div class="flex items-center w-[120px] text-JobTracker-blue">
         <p
           [class]="statusConfig()"
           class="rounded-4xl p-2 w-full text-center text-JobTracker-white font-semibold"

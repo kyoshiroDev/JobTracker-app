@@ -10,6 +10,10 @@
   --color-JobTracker-gray: rgb(236, 240, 241);
 }
 
+.tooltip {
+  @apply absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden px-2 py-1 text-white text-xs rounded bg-gray-700 group-hover:inline-block whitespace-nowrap;
+}
+
 /* Side Bar */
 .side-bar {
   @apply bg-JobTracker-side min-h-screen w-[300px] 
@@ -48,7 +52,7 @@ header {
 
 /* Pages container */
 .page-container {
-  @apply flex flex-1 flex-col bg-JobTracker-gray;
+  @apply flex flex-1 flex-col bg-JobTracker-gray max-h-dvh;
 }
 
 /* Title */

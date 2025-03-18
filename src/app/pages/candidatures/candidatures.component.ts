@@ -13,7 +13,7 @@ import { Annonce } from '../../shareds/models/annonce';
       [annonces]="annonces()"
       (formValue)="annonceSearch.set($event)"
     />
-    <div class="grid grid-cols-2 gap-6 p-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 p-8 max-h-[48vh] md:max-h-[50vh] lg:max-h-[60vh] xl:max-h-[65vh] mt-5 overflow-y-auto bg-JobTracker-gray">
       @for (annonce of annonceFilter(); track annonce.id) {
       <fdw-candidature [annonce]="annonce" />
       } @empty { @for (annonce of annonces(); track annonce.id) {

@@ -1,15 +1,12 @@
-import { Component,inject, input, output } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { Component, inject, input, output } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { STATUS_COLOR } from '../../../../shareds/tokens/statusColor-token';
 import { Annonce } from '../../../../shareds/models/annonce';
 import { AnnonceFormSearch } from '../../../../shareds/models/annonceForm';
 
 @Component({
   selector: 'fdw-form-search',
+  standalone: true,
   imports: [ReactiveFormsModule],
   template: `
     <div class="flex flex-col items-center justify-center w-full px-4">
@@ -19,55 +16,54 @@ import { AnnonceFormSearch } from '../../../../shareds/models/annonceForm';
       <form
         (change)="formValue.emit(this.researchForm.value)"
         [formGroup]="researchForm"
-        class="bg-white p-4 rounded-lg shadow-md flex gap-2 items-center w-full"
+        class="bg-white p-4 rounded-lg shadow-md flex flex-wrap w-full justify-between"
       >
-        <!-- Zone de texte -->
         <input
           type="text"
           formControlName="poste"
           placeholder="Mot-clé..."
-          class="w-3/6 p-2 border rounded-lg focus:ring focus:ring-blue-300"
+          class="w-1/1 xl:w-2/7 p-2 border rounded-lg mt-2"
         />
 
-        <!-- Sélections -->
         <select
           formControlName="entreprise"
-          class="w-1/6 p-2 border rounded-lg h-[42px] appearance-none"
+          class="w-1/1 lg:w-1/4 xl:w-1/6 p-2 border rounded-lg appearance-none mt-2"
         >
           <option value="" selected>Choisissez une entreprise</option>
-          @for (annonce of annonces(); track annonce.id) {
+          @if(annonces().length > 0) { @for (annonce of annonces(); track
+          annonce.id) {
           <option [value]="annonce.entreprise">{{ annonce.entreprise }}</option>
-          }
+          } }
         </select>
 
         <select
           formControlName="ville"
-          class="w-1/6 p-2 border rounded-lg focus:ring focus:ring-blue-300 h-[42px] appearance-none"
+          class="w-1/1 lg:w-1/4 xl:w-1/6 p-2 border rounded-lg mt-2 appearance-none"
         >
-          <option value="" selected>
-            Choisissez une localisation
-          </option>
-          @for (annonce of annonces(); track annonce.id) {
+          <option value="" selected>Choisissez une localisation</option>
+          @if(annonces().length > 0) { @for (annonce of annonces(); track
+          annonce.id) {
           <option [value]="annonce.ville">{{ annonce.ville }}</option>
-          }
+          } }
         </select>
 
         <select
           formControlName="salaire"
-          class="w-1/6 p-2 border rounded-lg focus:ring focus:ring-blue-300 h-[42px] appearance-none"
+          class="w-1/1 lg:w-1/4 xl:w-1/6 p-2 border rounded-lg mt-2 appearance-none"
         >
           <option value="null" selected>Choisissez un revenu</option>
-          @for (annonce of annonces(); track annonce.id) {
+          @if(annonces().length > 0) { @for (annonce of annonces(); track
+          annonce.id) {
           <option [value]="annonce.salaire">{{ annonce.salaire }} €</option>
-          }
+          } }
         </select>
 
         <select
           formControlName="status"
-          class="w-1/6 p-2 border rounded-lg focus:ring focus:ring-blue-300 h-[42px] appearance-none"
+          class="w-1/1 lg:w-1/6 xl:w-1/6 p-2 border rounded-lg h-[42px] mt-2 appearance-none"
         >
           <option value="" selected>Choisissez un statut</option>
-          @for (status of status; track status.label) {
+          @for (status of statusList; track status.label) {
           <option [value]="status.label">{{ status.label }}</option>
           }
         </select>
@@ -76,7 +72,7 @@ import { AnnonceFormSearch } from '../../../../shareds/models/annonceForm';
   `,
 })
 export class FormSearchComponent {
-  readonly status = inject(STATUS_COLOR);
+  readonly statusList = inject(STATUS_COLOR);
 
   readonly annonces = input.required<Annonce[]>();
   readonly formValue = output<FormSearchComponent['researchForm']['value']>();
