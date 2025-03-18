@@ -16,8 +16,8 @@
 
 /* Side Bar */
 .side-bar {
-  @apply bg-JobTracker-side min-h-screen w-[300px] 
-  hidden
+  @apply bg-JobTracker-side min-h-dvh w-[300px] 
+  
   2xl:flex 
   flex-col 
   gap-8 

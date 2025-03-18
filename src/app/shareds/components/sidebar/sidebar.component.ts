@@ -7,7 +7,7 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   imports: [RouterLink, RouterLinkActive,],
   template: `
   <div class="side-bar">
-    <h1 class="mt-8 text-3xl">JobTracker</h1>
+    <h1 class="text-3xl">JobTracker</h1>
     <ul>
       @for(menu of sidebar(); track menu.id){
         <li class="side-li" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true}">
