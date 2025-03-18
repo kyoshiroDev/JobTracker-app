@@ -86,7 +86,7 @@ h3 {
 
 /* Candidatures récentes */
 .table-container {
-  @apply max-w-[92%] m-auto bg-JobTracker-white p-5 rounded-xl  drop-shadow-lg;
+  @apply max-w-[98%] lg:max-w-[92%] m-auto bg-JobTracker-white p-5 rounded-xl  drop-shadow-lg;
 }
 table {
   @apply table-auto lg:table-fixed w-full border-collapse border border-JobTracker-gray;
