@@ -14,11 +14,11 @@ import { ButtonComponent } from '../../../shareds/components/button/button.compo
   ],
   template: `
     <div class="p-6 flex flex-col justify-start gap-15">
-      <fdw-suivi-candidatures />
+      <fdw-suivi-candidatures class="hidden lg:flex"/>
       <fdw-candidatures-recentes />
       <!-- <fdw-tache-a-faire /> -->
     </div>
-      <fdw-button />
+      <fdw-button class="hidden"/>
   `,
 })
 export class DashboardComponent {}

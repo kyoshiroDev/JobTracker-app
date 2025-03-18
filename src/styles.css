@@ -89,7 +89,7 @@ h3 {
   @apply max-w-[92%] m-auto bg-JobTracker-white p-5 rounded-xl  drop-shadow-lg;
 }
 table {
-  @apply table-fixed w-full border-collapse border border-JobTracker-gray;
+  @apply table-auto lg:table-fixed w-full border-collapse border border-JobTracker-gray;
 }
 
 thead {
@@ -97,7 +97,7 @@ thead {
 }
 
 th {
-  @apply border border-JobTracker-gray pl-5;
+  @apply border border-JobTracker-gray text-center p-1;
 }
 
 tr {
@@ -105,7 +105,7 @@ tr {
 }
 
 td {
-  @apply border border-JobTracker-gray pl-3;
+  @apply border border-JobTracker-gray;
 }
 
 /* Tâches à faire */

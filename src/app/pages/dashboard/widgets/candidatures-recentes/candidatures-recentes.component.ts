@@ -1,4 +1,4 @@
-import { Component, computed, inject, Signal } from '@angular/core';
+import { Component, HostListener, inject, signal, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnnoncesService } from '../../../../shareds/services/annonces/annonces.service';
 import { Annonce } from '../../../../shareds/models/annonce';
@@ -9,13 +9,13 @@ import { STATUS_COLOR } from '../../../../shareds/tokens/statusColor-token';
   imports: [CommonModule],
   template: `
     <div class="table-container">
-      <h3>Candidatures Récentes</h3>
+      <h3 class="text-center lg:text-left">Candidatures Récentes</h3>
       <table>
         <thead>
           <tr>
             <th>Poste</th>
-            <th>Entreprise</th>
-            <th>Localisation</th>
+            <th class="hidden lg:table-cell">Entreprise</th>
+            <th class="hidden lg:table-cell">Localisation</th>
             <th>Statut</th>
           </tr>
         </thead>
@@ -23,9 +23,25 @@ import { STATUS_COLOR } from '../../../../shareds/tokens/statusColor-token';
           @for(annonce of annonces(); track annonce.id){
           <tr>
             <td>{{ annonce.poste }}</td>
-            <td>{{ annonce.entreprise }}</td>
-            <td>{{ annonce.ville }}</td>
-            <td [class]="statusColorClass(annonce.status)">{{ annonce.status }}</td>
+            <td class="hidden lg:table-cell">{{ annonce.entreprise }}</td>
+            <td class="hidden lg:table-cell">{{ annonce.ville }}</td>
+            <td [class]="statusColorClass(annonce.status)" class="hidden lg:table-cell">
+              {{ annonce.status }}
+            </td>
+            <td [class]="statusColorClass(annonce.status)" class="lg:hidden">
+              <svg
+              class="m-auto"
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m10.6 16.6l7.05-7.05l-1.4-1.4l-5.65 5.65l-2.85-2.85l-1.4 1.4zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
+                />
+              </svg>
+            </td>
           </tr>
           }
         </tbody>
@@ -40,8 +56,14 @@ export class CandidaturesRecentesComponent {
   protected readonly annonces: Signal<Annonce[]> =
     this.annoncesService.getAll();
 
-    protected statusColorClass(status: string): string {
-      const statusConfig = this.status.find(item => item.label === status);
-      return statusConfig?.colorClassText || 'text-JobTracker-blue';
-    }
+  protected readonly screenWidth = signal(window.innerWidth);
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.screenWidth.set(window.innerWidth);
+  }
+
+  protected statusColorClass(status: string): string {
+    const statusConfig = this.status.find((item) => item.label === status);
+    return statusConfig?.colorClassText || 'text-JobTracker-blue';
+  }
 }
