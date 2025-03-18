@@ -25,12 +25,18 @@ import { STATUS_COLOR } from '../../../../shareds/tokens/statusColor-token';
             <td>{{ annonce.poste }}</td>
             <td class="hidden lg:table-cell">{{ annonce.entreprise }}</td>
             <td class="hidden lg:table-cell">{{ annonce.ville }}</td>
-            <td [class]="statusColorClass(annonce.status)" class="hidden lg:table-cell">
+            <td
+              [class]="statusColorClass(annonce.status)"
+              class="hidden lg:table-cell"
+            >
               {{ annonce.status }}
             </td>
-            <td [class]="statusColorClass(annonce.status)" class="lg:hidden">
+            <td
+              [class]="statusColorClass(annonce.status)"
+              class="lg:hidden relative group"
+            >
               <svg
-              class="m-auto"
+                class="m-auto"
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"
@@ -41,6 +47,11 @@ import { STATUS_COLOR } from '../../../../shareds/tokens/statusColor-token';
                   d="m10.6 16.6l7.05-7.05l-1.4-1.4l-5.65 5.65l-2.85-2.85l-1.4 1.4zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"
                 />
               </svg>
+              <span
+                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden px-2 py-1 text-white text-xs rounded bg-gray-700 group-hover:inline-block whitespace-nowrap"
+              >
+                {{ annonce.status }}
+              </span>
             </td>
           </tr>
           }
