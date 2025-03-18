@@ -34,7 +34,7 @@ import { AnnonceFormSearch } from '../../../../shareds/models/annonceForm';
           formControlName="entreprise"
           class="w-1/6 p-2 border rounded-lg h-[42px] appearance-none"
         >
-          <option value="" disabled selected>Choisissez une entreprise</option>
+          <option value="" selected>Choisissez une entreprise</option>
           @for (annonce of annonces(); track annonce.id) {
           <option [value]="annonce.entreprise">{{ annonce.entreprise }}</option>
           }
@@ -44,7 +44,7 @@ import { AnnonceFormSearch } from '../../../../shareds/models/annonceForm';
           formControlName="ville"
           class="w-1/6 p-2 border rounded-lg focus:ring focus:ring-blue-300 h-[42px] appearance-none"
         >
-          <option value="" disabled selected>
+          <option value="" selected>
             Choisissez une localisation
           </option>
           @for (annonce of annonces(); track annonce.id) {
@@ -56,7 +56,7 @@ import { AnnonceFormSearch } from '../../../../shareds/models/annonceForm';
           formControlName="salaire"
           class="w-1/6 p-2 border rounded-lg focus:ring focus:ring-blue-300 h-[42px] appearance-none"
         >
-          <option value="null" disabled selected>Choisissez un revenu</option>
+          <option value="null" selected>Choisissez un revenu</option>
           @for (annonce of annonces(); track annonce.id) {
           <option [value]="annonce.salaire">{{ annonce.salaire }} €</option>
           }
@@ -66,7 +66,7 @@ import { AnnonceFormSearch } from '../../../../shareds/models/annonceForm';
           formControlName="status"
           class="w-1/6 p-2 border rounded-lg focus:ring focus:ring-blue-300 h-[42px] appearance-none"
         >
-          <option value="" disabled selected>Choisissez un statut</option>
+          <option value="" selected>Choisissez un statut</option>
           @for (status of status; track status.label) {
           <option [value]="status.label">{{ status.label }}</option>
           }

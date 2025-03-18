@@ -1,6 +1,5 @@
 import { computed, Injectable, signal, Signal } from '@angular/core';
 import { Annonce } from '../../models/annonce';
-import { StatusConfig } from '../../models/statusConfig.model';
 
 @Injectable({
   providedIn: 'root',
@@ -31,7 +30,7 @@ export class AnnoncesService {
     },
     {
       id: 3,
-      poste: 'développeur front-end',
+      poste: 'développeur back-end',
       entreprise: 'Amazon',
       ville: 'Nante',
       content: '',

@@ -1,6 +1,7 @@
 import { Component, computed, inject, input, Signal } from '@angular/core';
 import { Annonce } from '../../../../shareds/models/annonce';
 import { STATUS_COLOR } from '../../../../shareds/tokens/statusColor-token';
+import { AnnonceFormSearch } from '../../../../shareds/models/annonceForm';
 
 @Component({
   selector: 'fdw-candidature',
@@ -37,7 +38,7 @@ import { STATUS_COLOR } from '../../../../shareds/tokens/statusColor-token';
   `,
 })
 export class CandidatureComponent {
-  readonly annonce = input.required<Annonce>();
+  readonly annonce = input.required<Annonce | AnnonceFormSearch>();
   readonly status = inject(STATUS_COLOR);
 
   readonly statusConfig: Signal<string | undefined> = computed(() => {
