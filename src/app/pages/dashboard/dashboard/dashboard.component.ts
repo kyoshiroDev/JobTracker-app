@@ -13,8 +13,8 @@ import { ButtonComponent } from '../../../shareds/components/button/button.compo
     ButtonComponent,
   ],
   template: `
-    <div class="p-6 flex flex-col justify-start gap-15">
-      <fdw-suivi-candidatures class="hidden lg:flex"/>
+    <div class="py-6 lg:p-6 flex flex-col justify-start gap-15">
+      <fdw-suivi-candidatures class="hidden lg:flex lg:justify-center"/>
       <fdw-candidatures-recentes />
       <!-- <fdw-tache-a-faire /> -->
     </div>
