@@ -1,9 +1,9 @@
 import { Component, computed, inject, Signal, signal } from '@angular/core';
-import { ButtonComponent } from '../../shareds/components/button/button.component';
-import { CandidatureComponent } from './components/candidature/candidature.component';
-import { AnnoncesService } from '../../shareds/services/annonces/annonces.service';
-import { FormSearchComponent } from './components/form-search/form-search.component';
-import { Annonce } from '../../shareds/models/annonce';
+import { ButtonComponent } from '../../shared/components/button/button.component';
+import { CandidatureComponent } from '../candidature-card/candidature-card.component';
+import { AnnoncesService } from '../../shared/services/annonces/annonces.service';
+import { Annonce } from '../../shared/models/annonce';
+import { FormSearchComponent } from '../form-search/form-search.component';
 
 @Component({
   selector: 'fdw-candidatures',
@@ -12,8 +12,11 @@ import { Annonce } from '../../shareds/models/annonce';
     <fdw-form-search
       [annonces]="annonces()"
       (formValue)="annonceSearch.set($event)"
+      (resetForm)="annonceSearch.set({})"
     />
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 p-8 max-h-[48vh] md:max-h-[50vh] lg:max-h-[60vh] xl:max-h-[65vh] mt-5 overflow-y-auto bg-JobTracker-gray">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-2 p-8 max-h-[48vh] md:max-h-[50vh] lg:max-h-[60vh] xl:max-h-[65vh] mt-5 overflow-y-auto bg-JobTracker-gray"
+    >
       @for (annonce of annonceFilter(); track annonce.id) {
       <fdw-candidature [annonce]="annonce" />
       } @empty { @for (annonce of annonces(); track annonce.id) {
@@ -32,7 +35,7 @@ export class CandidaturesComponent {
 
   annonceFilter = computed(() => {
     const search = this.annonceSearch();
-    if (search === null || '') {
+    if (!search || Object.keys(search).length === 0) {
       return this.annonces();
     }
     return this.annonces().filter(

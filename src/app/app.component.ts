@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { SidebarComponent } from './shareds/components/sidebar/sidebar.component';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './shareds/components/header/header.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 @Component({
   selector: 'fdw-root',

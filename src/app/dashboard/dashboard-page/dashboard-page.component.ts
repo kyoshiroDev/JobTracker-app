@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { SuiviCandidaturesComponent } from '../widgets/suivi-candidatures/suivi-candidatures.component';
-import { CandidaturesRecentesComponent } from '../widgets/candidatures-recentes/candidatures-recentes.component';
-//import { TacheAFaireComponent } from '../widgets/tache-a-faire/tache-a-faire.component';
-import { ButtonComponent } from '../../../shareds/components/button/button.component';
+import { SuiviCandidaturesComponent } from '../suivi-candidatures/suivi-candidatures.component';
+import { CandidaturesRecentesComponent } from '../candidatures-recentes/candidatures-recentes.component';
+//import { TacheAFaireComponent } from './widgets/tache-a-faire/tache-a-faire.component';
+import { ButtonComponent } from '../../shared/components/button/button.component';
+
 
 @Component({
   selector: 'fdw-dashboard',

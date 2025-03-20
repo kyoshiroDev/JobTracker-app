@@ -1,8 +1,8 @@
 import { Component, HostListener, inject, signal, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AnnoncesService } from '../../../../shareds/services/annonces/annonces.service';
-import { Annonce } from '../../../../shareds/models/annonce';
-import { STATUS_COLOR } from '../../../../shareds/tokens/statusColor-token';
+import { AnnoncesService } from '../../shared/services/annonces/annonces.service';
+import { Annonce } from '../../shared/models/annonce';
+import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
 
 @Component({
   selector: 'fdw-candidatures-recentes',

@@ -1,5 +1,5 @@
 import { Provider } from '@angular/core';
-import { STATUS_COLOR } from './statusColor-token';
+import { STATUS_COLOR } from './status-color-token';
 import { StatusConfig } from '../models/statusConfig.model';
 
 export const STATUS_COLOR_PROVIDER: Provider = {

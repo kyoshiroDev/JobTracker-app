@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
-import { Sidebarmenu } from '../../../shareds/models/sidebarmenu';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { Sidebarmenu } from '../../models/sidebarmenu';
 
 @Component({
   selector: 'fdw-sidebar',

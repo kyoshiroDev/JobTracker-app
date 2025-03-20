@@ -1,7 +1,7 @@
 import { Component, computed, inject, input, Signal } from '@angular/core';
-import { Annonce } from '../../../../shareds/models/annonce';
-import { STATUS_COLOR } from '../../../../shareds/tokens/statusColor-token';
-import { AnnonceFormSearch } from '../../../../shareds/models/annonceForm';
+import { Annonce } from '../../shared/models/annonce';
+import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
+import { AnnonceFormSearch } from '../../shared/models/annonceForm';
 
 @Component({
   selector: 'fdw-candidature',

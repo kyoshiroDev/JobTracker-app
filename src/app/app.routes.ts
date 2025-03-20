@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './pages/dashboard/dashboard/dashboard.component';
-import { CandidaturesComponent } from './pages/candidatures/candidatures.component';
-import { TodolisteComponent } from './pages/todoliste/todoliste.component';
+import { CandidaturesComponent } from './candidature/candidature-liste-page/candidature-liste-page.component';
+import { TodolisteComponent } from './page-todo-liste/todoliste.component';
+import { DashboardComponent } from './dashboard/dashboard-page/dashboard-page.component';
 
 
 export const routes: Routes = [
