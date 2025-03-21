@@ -1,13 +1,22 @@
-import { Component, computed, inject, input, Signal } from '@angular/core';
+import {
+  Component,
+  computed,
+  inject,
+  input,
+  output,
+  Signal,
+} from '@angular/core';
 import { Annonce } from '../../shared/models/annonce';
 import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
-import { AnnonceFormSearch } from '../../shared/models/annonceForm';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'fdw-candidature',
-  imports: [],
+  imports: [RouterLink],
   template: `
     <a
+      [routerLink]="['/candidature', annonce().id]"
+      (click)="handleClick($event)"
       class="flex flex-col items-center xl:flex-row min-h-[152px] xl:text-left gap-1 bg-JobTracker-white rounded-md p-4 shadow-md cursor-pointer hover:scale-102 transition-transform duration-500 ease-in-out"
     >
       <div
@@ -38,8 +47,10 @@ import { AnnonceFormSearch } from '../../shared/models/annonceForm';
   `,
 })
 export class CandidatureComponent {
-  readonly annonce = input.required<Annonce | AnnonceFormSearch>();
   readonly status = inject(STATUS_COLOR);
+
+  readonly annonce = input.required<Annonce>();
+  readonly goToDetail = output<Annonce['id']>();
 
   readonly statusConfig: Signal<string | undefined> = computed(() => {
     const statusConfig = this.status.find(
@@ -47,4 +58,10 @@ export class CandidatureComponent {
     );
     return statusConfig ? statusConfig.colorClassBg : 'bg-JobTracker-blue';
   });
+
+  handleClick(event: Event) {
+    event.preventDefault(); // Empêche l'action par défaut du lien
+    event.stopPropagation(); // Empêche l'événement de remonter et d'être capté ailleurs
+    this.goToDetail.emit(this.annonce().id);
+  }
 }

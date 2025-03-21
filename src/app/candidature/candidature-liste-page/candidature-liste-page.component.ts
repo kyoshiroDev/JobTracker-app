@@ -4,6 +4,7 @@ import { CandidatureComponent } from '../candidature-card/candidature-card.compo
 import { AnnoncesService } from '../../shared/services/annonces/annonces.service';
 import { Annonce } from '../../shared/models/annonce';
 import { FormSearchComponent } from '../form-search/form-search.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'fdw-candidatures',
@@ -18,9 +19,9 @@ import { FormSearchComponent } from '../form-search/form-search.component';
       class="grid grid-cols-1 md:grid-cols-2 gap-2 p-8 max-h-[48vh] md:max-h-[50vh] lg:max-h-[60vh] xl:max-h-[65vh] mt-5 overflow-y-auto bg-JobTracker-gray"
     >
       @for (annonce of annonceFilter(); track annonce.id) {
-      <fdw-candidature [annonce]="annonce" />
+      <fdw-candidature (goToDetail)="annonceDetail($event)" [annonce]="annonce" />
       } @empty { @for (annonce of annonces(); track annonce.id) {
-      <fdw-candidature [annonce]="annonce" />
+      <fdw-candidature (goToDetail)="annonceDetail($event)" [annonce]="annonce" />
       } }
     </div>
     <fdw-button />
@@ -28,6 +29,8 @@ import { FormSearchComponent } from '../form-search/form-search.component';
 })
 export class CandidaturesComponent {
   protected readonly annoncesService = inject(AnnoncesService);
+  protected readonly router = inject(Router);
+
   protected readonly annonces: Signal<Annonce[]> =
     this.annoncesService.getAll();
 
@@ -57,4 +60,9 @@ export class CandidaturesComponent {
         annonce.status === search.status
     );
   });
+
+  annonceDetail(id: number){
+    console.log('ID reçu depuis l’enfant:', id);
+   return this.router.navigate(['/candidature', id])
+  }
 }
