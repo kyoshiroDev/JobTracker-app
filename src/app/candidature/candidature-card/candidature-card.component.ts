@@ -29,10 +29,10 @@ import { RouterLink } from '@angular/router';
           {{ annonce().poste }}
         </h4>
         <p class="text-xl text-JobTracker-blue font-semibold">
-          {{ annonce().entreprise }}
+          {{ annonce().entreprise.name }}
         </p>
         <p class="flex items-center gap-2 text-lg">
-          {{ annonce().ville }}
+          {{ annonce().entreprise.ville }}
         </p>
       </div>
       <div class="flex items-center w-[120px] text-JobTracker-blue">

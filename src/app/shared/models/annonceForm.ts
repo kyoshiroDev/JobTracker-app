@@ -1,20 +1,25 @@
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
-export interface AnnonceFormSearch {
-  poste: FormControl<string | null>;
-  entreprise: FormControl<string | null>;
+export interface EntrepriseForm {
+  name: FormControl<string | null>;
   ville: FormControl<string | null>;
-  salaire: FormControl<number | null>;
-  status: FormControl<string | null>;
+  phone?: FormControl<string | null>;
+  email?: FormControl<string | null>;
 }
 
+export interface ContentForm {
+  aPropos: FormControl<string | null>;
+  descriptif: FormControl<string[] | null>;
+  competence: FormControl<string[] | null>;
+  avantage: FormControl<string[] | null>;
+}
 export interface AnnonceForm {
   poste: FormControl<string | null>;
-  entreprise: FormControl<string | null>;
-  ville: FormControl<string | null>;
-  content: FormControl<string | null>;
+  entreprise: FormGroup<EntrepriseForm>;
+  content?: FormGroup<ContentForm>;
   salaire: FormControl<number | null>;
-  annonceLnk: FormControl<string | null>;
+  contrat?: FormControl<string | null>;
+  annonceLnk?: FormControl<string | null>;
   status: FormControl<string | null>;
-  createdAt: FormControl<Date | null>;
+  createdAt?: FormControl<Date | null>;
 }

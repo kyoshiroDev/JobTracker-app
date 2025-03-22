@@ -2,7 +2,7 @@ import { Component, inject, input, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
 import { Annonce } from '../../shared/models/annonce';
-import { AnnonceFormSearch } from '../../shared/models/annonceForm';
+import { AnnonceForm, EntrepriseForm } from '../../shared/models/annonceForm';
 
 @Component({
   selector: 'fdw-form-search',
@@ -16,57 +16,66 @@ import { AnnonceFormSearch } from '../../shared/models/annonceForm';
       <form
         (change)="formValue.emit(this.researchForm.value)"
         [formGroup]="researchForm"
-        class="bg-white p-4 rounded-lg shadow-md flex flex-wrap w-full justify-end lg:justify-between"
+        class="bg-white p-4 rounded-lg shadow-md flex flex-wrap container justify-center gap-3"
       >
         <input
           type="text"
           formControlName="poste"
           placeholder="Mot-clé..."
-          class="w-1/1 xl:w-2/7 p-2 border rounded-lg mt-2"
+          class="w-1/1 p-2 border rounded-lg mt-2"
         />
-
-        <select
-          formControlName="entreprise"
-          class="w-1/1 lg:w-1/4 xl:w-1/6 p-2 border rounded-lg appearance-none mt-2"
+        <fieldset
+          class="flex justify-around gap-3 w-[500px]"
+          formGroupName="entreprise"
         >
-          <option value="null" selected>Choisissez une entreprise</option>
-          @if(annonces().length > 0) { @for (annonce of annonces(); track
-          annonce.id) {
-          <option [value]="annonce.entreprise">{{ annonce.entreprise }}</option>
-          } }
-        </select>
+          <select
+            formControlName="name"
+            class="p-2 border rounded-lg appearance-none mt-2 w-1/2"
+          >
+            <option value="null" selected>Choisissez une entreprise</option>
+            @if(annonces().length > 0) { @for (annonce of annonces(); track
+            annonce.id) {
+            <option [value]="annonce.entreprise.name">
+              {{ annonce.entreprise.name }}
+            </option>
+            } }
+          </select>
 
-        <select
-          formControlName="ville"
-          class="w-1/1 lg:w-1/4 xl:w-1/6 p-2 border rounded-lg mt-2 appearance-none"
-        >
-          <option value="null" selected>Choisissez une localisation</option>
-          @if(annonces().length > 0) { @for (annonce of annonces(); track
-          annonce.id) {
-          <option [value]="annonce.ville">{{ annonce.ville }}</option>
-          } }
-        </select>
+          <select
+            formControlName="ville"
+            class="p-2 border rounded-lg mt-2 appearance-none w-1/2"
+          >
+            <option value="null" selected>Choisissez une localisation</option>
+            @if(annonces().length > 0) { @for (annonce of annonces(); track
+            annonce.id) {
+            <option [value]="annonce.entreprise.ville">
+              {{ annonce.entreprise.ville }}
+            </option>
+            } }
+          </select>
+        </fieldset>
+        <fieldset class="flex justify-around gap-3 w-[500px]">
+          <select
+            formControlName="salaire"
+            class="p-2 border rounded-lg mt-2 appearance-none w-1/2"
+          >
+            <option value="null" selected>Choisissez un revenu</option>
+            @if(annonces().length > 0) { @for (annonce of annonces(); track
+            annonce.id) {
+            <option [value]="annonce.salaire">{{ annonce.salaire }} €</option>
+            } }
+          </select>
 
-        <select
-          formControlName="salaire"
-          class="w-1/1 lg:w-1/4 xl:w-1/6 p-2 border rounded-lg mt-2 appearance-none"
-        >
-          <option value="null" selected>Choisissez un revenu</option>
-          @if(annonces().length > 0) { @for (annonce of annonces(); track
-          annonce.id) {
-          <option [value]="annonce.salaire">{{ annonce.salaire }} €</option>
-          } }
-        </select>
-
-        <select
-          formControlName="status"
-          class="w-1/1 lg:w-1/6 xl:w-1/6 p-2 border rounded-lg h-[42px] mt-2 appearance-none"
-        >
-          <option value="null" selected>Choisissez un statut</option>
-          @for (status of statusList; track status.label) {
-          <option [value]="status.label">{{ status.label }}</option>
-          }
-        </select>
+          <select
+            formControlName="status"
+            class="p-2 border rounded-lg h-[42px] mt-2 appearance-none w-1/2"
+          >
+            <option value="null" selected>Choisissez un statut</option>
+            @for (status of statusList; track status.label) {
+            <option [value]="status.label">{{ status.label }}</option>
+            }
+          </select>
+        </fieldset>
         <div>
           <button
             (click)="resetForm.emit(this.researchForm.reset())"
@@ -105,12 +114,14 @@ export class FormSearchComponent {
 
   readonly annonces = input.required<Annonce[]>();
   readonly formValue = output<FormSearchComponent['researchForm']['value']>();
-  readonly resetForm = output()
+  readonly resetForm = output<void>();
 
-  researchForm = new FormGroup<AnnonceFormSearch>({
+  researchForm = new FormGroup<AnnonceForm>({
     poste: new FormControl(null),
-    entreprise: new FormControl(null),
-    ville: new FormControl(null),
+    entreprise: new FormGroup<EntrepriseForm>({
+      name: new FormControl(null),
+      ville: new FormControl(null),
+    }),
     salaire: new FormControl(null),
     status: new FormControl(null),
   });

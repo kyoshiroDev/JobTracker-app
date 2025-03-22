@@ -23,8 +23,8 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
           @for(annonce of annonces(); track annonce.id){
           <tr>
             <td>{{ annonce.poste }}</td>
-            <td class="hidden lg:table-cell">{{ annonce.entreprise }}</td>
-            <td class="hidden lg:table-cell">{{ annonce.ville }}</td>
+            <td class="hidden lg:table-cell">{{ annonce.entreprise.name }}</td>
+            <td class="hidden lg:table-cell">{{ annonce.entreprise.ville }}</td>
             <td
               [class]="statusColorClass(annonce.status)"
               class="hidden lg:table-cell"

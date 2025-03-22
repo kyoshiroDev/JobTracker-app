@@ -54,8 +54,8 @@ export class CandidaturesComponent {
             .trim()
             .replaceAll(' ', '')
             .replaceAll('-', '') ||
-        annonce.entreprise === search.entreprise ||
-        annonce.ville === search.ville ||
+        annonce.entreprise.name === search.entreprise?.name ||
+        annonce.entreprise.ville === search.entreprise?.ville ||
         annonce.salaire.toString() === search.salaire?.toString() ||
         annonce.status === search.status
     );
