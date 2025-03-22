@@ -62,7 +62,6 @@ export class CandidaturesComponent {
   });
 
   annonceDetail(id: number){
-    console.log('ID reçu depuis l’enfant:', id);
    return this.router.navigate(['/candidature', id])
   }
 }
