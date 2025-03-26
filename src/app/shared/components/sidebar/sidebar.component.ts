@@ -7,7 +7,7 @@ import { Sidebarmenu } from '../../models/sidebarmenu';
   imports: [RouterLink, RouterLinkActive],
   template: `
     <div class="side-bar">
-      <div class="flex flex-col justify-center items-center h-[80px]">
+      <div class="flex flex-col justify-center items-center h-35">
         <h1 class="text-3xl">JobTracker</h1>
       </div>
       <div class="flex flex-col">

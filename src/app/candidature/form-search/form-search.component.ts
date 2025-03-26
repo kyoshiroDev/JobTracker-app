@@ -1,23 +1,21 @@
 import { Component, inject, input, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
 import { Annonce } from '../../shared/models/annonce';
 import { AnnonceForm, EntrepriseForm } from '../../shared/models/annonceForm';
+import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
 
 @Component({
   selector: 'fdw-form-search',
   standalone: true,
   imports: [ReactiveFormsModule],
   template: `
-    <div class="flex flex-col items-center justify-center w-full px-4">
-      <h4 class="p-8 text-2xl text-JobTracker-blue font-semibold">
-        RECHERCHER
-      </h4>
+    <div class="flex flex-col items-center justify-center w-full">
       <form
         (change)="formValue.emit(this.researchForm.value)"
         [formGroup]="researchForm"
-        class="bg-white p-4 rounded-lg shadow-md flex flex-wrap container justify-center gap-3"
+        class="bg-white p-3 rounded-lg shadow-md flex flex-wrap container justify-center gap-3 mt-5"
       >
+        <h4 class="text-2xl text-JobTracker-blue font-semibold">RECHERCHER</h4>
         <input
           type="text"
           formControlName="poste"
@@ -116,9 +114,13 @@ export class FormSearchComponent {
   readonly formValue = output<FormSearchComponent['researchForm']['value']>();
   readonly resetForm = output<void>();
 
-  researchForm = new FormGroup<AnnonceForm>({
+  researchForm = new FormGroup<
+    Pick<AnnonceForm, 'poste' | 'salaire' | 'status'> & {
+      entreprise: FormGroup<Pick<EntrepriseForm, 'name' | 'ville'>>;
+    }
+  >({
     poste: new FormControl(null),
-    entreprise: new FormGroup<EntrepriseForm>({
+    entreprise: new FormGroup<Pick<EntrepriseForm, 'name' | 'ville'>>({
       name: new FormControl(null),
       ville: new FormControl(null),
     }),

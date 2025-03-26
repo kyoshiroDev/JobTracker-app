@@ -43,7 +43,7 @@
 /* Header */
 header {
   @apply flex 
-  h-20 
+  h-30 
   bg-JobTracker-blue 
   text-JobTracker-white 
   justify-between 
@@ -67,9 +67,9 @@ h3 {
 
 /* Button Add */
 .buttonAdd {
-  @apply flex justify-center items-center text-7xl 
+  @apply flex justify-center items-center text-5xl md:text-7xl 
   text-JobTracker-gray bg-JobTracker-side rounded-full 
-  p-5 w-20 h-20 cursor-pointer 
+  p-5 w-16 h-16 md:w-20 md:h-20 cursor-pointer 
   hover:bg-JobTracker-side-hover fixed bottom-8 right-5;
 }
 
