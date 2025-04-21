@@ -9,9 +9,9 @@ import {AnnonceFormComponent} from './shared/components/formulaire/annonce-form/
   imports: [SidebarComponent, RouterOutlet, HeaderComponent, AnnonceFormComponent],
   template: `
     <div class="flex h-dvh">
-      @defer {
+      <!--@defer {
         <fdw-annonce-form />
-      }
+      }-->
       <!-- Sidebar fixe -->
       <fdw-sidebar />
 
