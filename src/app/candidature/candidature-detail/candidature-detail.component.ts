@@ -17,7 +17,7 @@ import { CandidatureDetailHeaderComponent } from './candidature-detail-header/ca
     CandidatureDetailFooterComponent,
   ],
   template: `
-    <div class="flex flex-col max-h-content justify-center items-center">
+    <div class="flex flex-col max-h-content justify-center items-center bg-JobTracker-gray">
       @if (annonce()) {
       <div
         class="w-4xl mx-auto bg-JobTracker-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl my-6"
@@ -30,7 +30,7 @@ import { CandidatureDetailHeaderComponent } from './candidature-detail-header/ca
         />
 
         <!-- Contenu de l'annonce -->
-        <div class="p-6 overflow-y-scroll max-h-[460px]">
+        <div class="p-6 overflow-y-scroll max-h-[420px]">
           <fdw-candidature-detail-content [annonce]="annonce()" />
         </div>
         <!-- Footer de l'annonce -->

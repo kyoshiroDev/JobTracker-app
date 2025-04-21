@@ -4,12 +4,24 @@ import { Component, signal } from '@angular/core';
   selector: 'fdw-tache-a-faire',
   imports: [],
   template: `
-    <div class="liste-tache-container">
+    <div class="w-[46%] ml-[65px] bg-JobTracker-white p-5 rounded-xl  drop-shadow-lg">
       <h3>Tâches à faire</h3>
       @for (tache of taches(); track tache.id) {
-      <div class="tache-container" >
-        <p>{{ tache.content }}</p>
-      </div>
+        <div class="flex
+  items-center
+  max-h-[30px]
+  p-5
+  border-l-5
+  border
+  border-b-JobTracker-gray
+  border-t-JobTracker-gray
+  border-r-JobTracker-gray
+  border-JobTracker-blue
+  m-2
+  rounded-br-lg
+  rounded-tr-lg">
+          <p>{{ tache.content }}</p>
+        </div>
       }
     </div>
   `,

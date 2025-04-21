@@ -15,8 +15,10 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
         [formGroup]="researchForm"
         class="bg-white p-3 rounded-lg shadow-md flex flex-wrap container justify-center gap-3 mt-5"
       >
-        <h4 class="text-2xl text-JobTracker-blue font-semibold">RECHERCHER</h4>
+        <p class="text-2xl text-JobTracker-blue font-semibold">RECHERCHER</p>
+
         <input
+          aria-label="poste"
           type="text"
           formControlName="poste"
           placeholder="Mot-clé..."
@@ -27,6 +29,7 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
           formGroupName="entreprise"
         >
           <select
+            aria-label="name"
             formControlName="name"
             class="p-2 border rounded-lg appearance-none mt-2 w-1/2"
           >
@@ -40,6 +43,7 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
           </select>
 
           <select
+            aria-label="ville"
             formControlName="ville"
             class="p-2 border rounded-lg mt-2 appearance-none w-1/2"
           >
@@ -54,6 +58,7 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
         </fieldset>
         <fieldset class="flex justify-around gap-3 w-[500px]">
           <select
+            aria-label="salaire"
             formControlName="salaire"
             class="p-2 border rounded-lg mt-2 appearance-none w-1/2"
           >
@@ -65,6 +70,7 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
           </select>
 
           <select
+            aria-label="status"
             formControlName="status"
             class="p-2 border rounded-lg h-[42px] mt-2 appearance-none w-1/2"
           >

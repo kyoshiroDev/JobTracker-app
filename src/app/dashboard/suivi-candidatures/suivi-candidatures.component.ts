@@ -9,7 +9,15 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
   template: `
     <div class="flex justify-center gap-20 h-[90px] max-w-screen px-4">
       @for(status of statusConfigs; track status.label){
-      <div class="suivi-candidature-container">
+      <div class="flex flex-col
+  bg-JobTracker-white
+  font-semibold
+  w-[300px]
+  justify-center
+  items-center
+  gap-2
+  rounded-2xl
+  drop-shadow-lg">
         <h3 class="text-3xl">{{ status.label }}</h3>
         <p class="text-2xl" [class]="status.colorClassText">
           {{ annoncesServices.countByStatus().get(status.label)}}
@@ -21,6 +29,6 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
 })
 export class SuiviCandidaturesComponent {
   protected readonly annoncesServices = inject(AnnoncesService);
-  
+
   protected readonly statusConfigs = inject(STATUS_COLOR)
 }

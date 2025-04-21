@@ -6,19 +6,32 @@ import { Sidebarmenu } from '../../models/sidebarmenu';
   selector: 'fdw-sidebar',
   imports: [RouterLink, RouterLinkActive],
   template: `
-    <div class="side-bar">
+    <div class="bg-JobTracker-side h-full w-[300px]
+  hidden
+  2xl:flex
+  flex-col
+  gap-10
+  justify-start
+  items-center
+  text-JobTracker-white text-xl font-semibold;">
       <div class="flex flex-col justify-center items-center h-35">
         <h1 class="text-3xl">JobTracker</h1>
       </div>
       <div class="flex flex-col">
-        @for(menu of sidebar(); track menu.id){
-        <a
-          class="side-a"
-          routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{ exact: true }"
-          routerLink="{{ menu.routerLink }}"
+        @for (menu of sidebar(); track menu.id) {
+          <a
+            class="py-2
+    pl-4
+    pr-12
+    my-2.5
+    hover:bg-JobTracker-side-hover
+    cursor-pointer
+    rounded-md"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLink="{{ menu.routerLink }}"
           >{{ menu.name }}</a
-        >
+          >
         }
       </div>
     </div>

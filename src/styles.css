@@ -5,54 +5,14 @@
   /* Colors */
   --color-JobTracker-blue: rgb(1, 103, 163);
   --color-JobTracker-side: rgb(1, 79, 134);
-  --color-JobTracker-side-hover: rgb(0, 170, 255);
+  --color-JobTracker-side-hover: rgb(0, 122, 189);
   --color-JobTracker-white: rgb(255, 255, 255);
   --color-JobTracker-gray: rgb(236, 240, 241);
-}
-
-.tooltip {
-  @apply absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden px-2 py-1 text-white text-xs rounded bg-gray-700 group-hover:inline-block whitespace-nowrap;
-}
-
-/* Side Bar */
-.side-bar {
-  @apply bg-JobTracker-side min-h-dvh w-[300px] 
-  hidden
-  2xl:flex 
-  flex-col 
-  gap-10 
-  justify-start 
-  items-center 
-  text-JobTracker-white text-xl;
-}
-
-.side-a {
-  @apply py-2 
-    pl-4 
-    pr-12 
-    my-2.5 
-    hover:bg-JobTracker-side-hover 
-    cursor-pointer 
-    rounded-md;
+  --color-JobTracker-grayOpacity: rgba(236, 240, 241, 0.8);
 }
 
 .active-link {
   @apply bg-JobTracker-side-hover;
-}
-
-/* Header */
-header {
-  @apply flex 
-  h-30 
-  bg-JobTracker-blue 
-  text-JobTracker-white 
-  justify-between 
-  items-center;
-}
-
-/* Pages container */
-.page-container {
-  @apply flex flex-1 flex-col bg-JobTracker-gray max-h-dvh;
 }
 
 /* Title */
@@ -62,78 +22,5 @@ h2 {
 }
 
 h3 {
-  @apply text-JobTracker-blue font-bold text-xl pb-3;
-}
-
-/* Button Add */
-.buttonAdd {
-  @apply flex justify-center items-center text-5xl md:text-7xl 
-  text-JobTracker-gray bg-JobTracker-side rounded-full 
-  p-5 w-16 h-16 md:w-20 md:h-20 cursor-pointer 
-  hover:bg-JobTracker-side-hover fixed bottom-8 right-5;
-}
-
-/* Dashboard widgets */
-
-/* Suivi candidature */
-.suivi-candidature-container {
-  @apply flex flex-col 
-  bg-JobTracker-white 
-  font-semibold 
-  w-[300px] 
-  justify-center 
-  items-center 
-  gap-2 
-  rounded-2xl 
-  drop-shadow-lg;
-}
-
-/* Candidatures récentes */
-.table-container {
-  @apply max-w-[92%] m-auto bg-JobTracker-white p-5 rounded-xl  drop-shadow-lg;
-}
-table {
-  @apply table-auto lg:table-fixed w-full border-collapse border border-JobTracker-gray;
-}
-
-thead {
-  @apply bg-JobTracker-blue h-[40px] text-JobTracker-white text-left;
-}
-
-th {
-  @apply border border-JobTracker-gray text-center p-2;
-}
-
-tr {
-  @apply text-center h-[40px];
-}
-
-td {
-  @apply border border-JobTracker-gray;
-}
-
-/* Tâches à faire */
-.liste-tache-container {
-  @apply w-[46%] ml-[65px] bg-JobTracker-white p-5 rounded-xl  drop-shadow-lg;
-}
-
-.tache-container {
-  @apply flex 
-  items-center 
-  max-h-[30px] 
-  p-5 
-  border-l-5 
-  border 
-  border-b-JobTracker-gray
-  border-t-JobTracker-gray
-  border-r-JobTracker-gray
-  border-JobTracker-blue
-  m-2 
-  rounded-br-lg 
-  rounded-tr-lg;
-}
-
-/* Annonce */
-.annonce {
-  @apply h-[800px] overflow-auto grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4 items-center text-center p-5;
+  @apply text-JobTracker-blue font-bold text-xl mb-3;
 }

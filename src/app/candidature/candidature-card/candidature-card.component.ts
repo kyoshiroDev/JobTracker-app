@@ -25,9 +25,9 @@ import { RouterLink } from '@angular/router';
         <p>{{ annonce().salaire }} €</p>
       </div>
       <div class="grow pl-15">
-        <h4 class="text-2xl text-JobTracker-blue font-semibold">
+        <p class="text-2xl text-JobTracker-blue font-semibold">
           {{ annonce().poste }}
-        </h4>
+        </p>
         <p class="text-xl text-JobTracker-blue font-semibold">
           {{ annonce().entreprise.name }}
         </p>
