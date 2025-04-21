@@ -1,59 +1,47 @@
-# JobTrackerApp
+# 📌 JobTracker
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+JobTracker est une application web développée avec Angular 19, conçue pour aider les chercheurs d'emploi à organiser et suivre efficacement leurs candidatures. Elle permet de centraliser toutes les informations relatives aux offres d'emploi, de suivre l'évolution des candidatures et d'analyser les opportunités.
 
-## Development server
+[🔗 Accéder à l'application en ligne](https://jobtracker-eight.vercel.app/)
 
-To start a local development server, run:
+## 🚀 Fonctionnalités principales
+- **Ajout d'offres d'emploi :** Enregistrement des détails des offres, y compris le titre, l'entreprise, le lien vers l'annonce et des notes personnelles.
+- **Suivi des candidatures :** Mise à jour du statut de chaque candidature (en attente, entretien, refus, etc.).
+- **Tableau de bord intuitif :** Vue d'ensemble des candidatures avec des filtres pour une navigation facilitée.
+- **Analyse des candidatures :** Statistiques sur les candidatures envoyées, les réponses reçues et les entretiens programmés.
 
+## 🛠️ Technologies utilisées
+- **Framewoek :** Angular 19
+- **Langage :** TypeScript 5
+- **Styles :** Tailwind CSS 4
+
+## 🧠 Compétences acquises
+
+En développant JobTracker, j'ai renforcé et acquis les compétences suivantes :
+
+- **Les Signals (set() et computed()) :** J'ai utilisé les Signals pour gérer l'état réactif de l'application de manière plus simple et performante.
+- **Les directives (@If et @For) :** J'ai appris à utiliser ces directives pour gérer dynamiquement l'affichage des éléments.
+- **La création et gestion des services :** J'ai appris la création de services pour centraliser la logique métier et faciliter la gestion des données au sein de l'application.
+- **L'injection de dépendances (inject()) :** Grâce à l'utilisation de inject(), j'ai pu injecter des dépendances de manière plus moderne et concise, simplifiant ainsi le code et l'organisation des composants.
+- **Les input() et output() :** J'ai renforcé ma compréhension de la communication entre composants avec les signals input() et output(), facilitant les échanges de données entre les composants parents et enfants.
+- **La gestion des Reactive Forms :** J'ai développé un formulaires réactifs en, exploitant la puissance de Reactive Forms pour la validation, la gestion dynamique des champs, et l'intégration fluide avec les données de l'application.
+- **Les pipes (notamment pour la gestion des dates) :** J'ai utilisé des pipes pour formater les données dans le template, en particulier pour les dates, afin d'améliorer l'expérience utilisateur et maintenir un code propre et réutilisable.
+- **Déploiement :** Publication de l'application sur Vercel pour une accessibilité en ligne.
+
+## 🧪 Lancer l'application en local
+1. **Cloner le dépôt :**
 ```bash
-ng serve
+    git clone git@github.com:kyoshiroDev/JobTracker-app.git
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+2. **Installer les dépendances :**
 ```bash
-ng generate component component-name
+    npm install
 ```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+3.**Démarrer le serveur de développement :**
 ```bash
-ng generate --help
+    ng serve
 ```
+L'application sera accessible à l'adresse http://localhost:4200/.
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🤝 Contribution
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou à soumettre une pull request pour proposer des améliorations ou corriger des bugs.
