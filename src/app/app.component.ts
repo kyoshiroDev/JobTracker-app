@@ -30,7 +30,7 @@ import {ButtonComponent} from './shared/components/button/button.component';
   `,
 })
 export class AppComponent {
-  showModal:WritableSignal<boolean> = signal(true);
+  showModal:WritableSignal<boolean> = signal(false);
 
   openModal(){
     this.showModal.set(true);

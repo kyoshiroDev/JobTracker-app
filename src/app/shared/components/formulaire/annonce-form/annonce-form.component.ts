@@ -40,15 +40,15 @@ import {ContentFormComponent} from './content-form/content-form.component';
           }
         </form>
 
-        @if (entrepriseForm()) {
-          <div class="flex justify-end px-5 py-2">
-            <button (click)="switchForm(false)" type="button" class="cursor-pointer text-JobTracker-side hover:text-JobTracker-side-hover">Annonce -></button>
-          </div>
-        } @else {
-          <div class="flex justify-start px-5 py-2">
-            <button (click)="switchForm(true)" type="button" class="cursor-pointer text-JobTracker-side hover:text-JobTracker-side-hover"><- Entreprise</button>
-          </div>
-        }
+        <div class="flex px-5 py-2" [class.justify-end]="entrepriseForm()" [class.justify-start]="!entrepriseForm()">
+          <button
+            (click)="switchForm(!entrepriseForm())"
+            type="button"
+            class="cursor-pointer text-JobTracker-side hover:text-JobTracker-side-hover"
+          >
+            {{ entrepriseForm() ? 'Annonce ->' : '<- Entreprise' }}
+          </button>
+        </div>
       </div>
     </div>
   `,
