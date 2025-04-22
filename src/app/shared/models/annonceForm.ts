@@ -9,9 +9,9 @@ export interface EntrepriseForm {
 
 export interface ContentForm {
   aPropos: FormControl<string | null>;
-  descriptif: FormControl<string[] | null>;
-  competence: FormControl<string[] | null>;
-  avantage: FormControl<string[] | null>;
+  descriptif: FormControl<string | null>;
+  competence: FormControl<string | null>;
+  avantage: FormControl<string | null>;
 }
 export interface AnnonceForm {
   poste: FormControl<string | null>;
@@ -19,7 +19,7 @@ export interface AnnonceForm {
   content: FormGroup<ContentForm>;
   salaire: FormControl<number | null>;
   contrat: FormControl<string | null>;
-  annonceLnk: FormControl<string | null>;
+  annonceLink: FormControl<string | null>;
   status: FormControl<string | null>;
   createdAt: FormControl<Date | null>;
 }

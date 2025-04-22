@@ -10,7 +10,6 @@ import { ButtonComponent } from '../../shared/components/button/button.component
     SuiviCandidaturesComponent,
     CandidaturesRecentesComponent,
     //TacheAFaireComponent,
-    ButtonComponent,
   ],
   template: `
     <div
@@ -20,7 +19,6 @@ import { ButtonComponent } from '../../shared/components/button/button.component
       <fdw-candidatures-recentes />
       <!-- <fdw-tache-a-faire /> -->
     </div>
-    <fdw-button class="lg:flex lg:justify-center" />
   `,
 })
 export class DashboardComponent {}

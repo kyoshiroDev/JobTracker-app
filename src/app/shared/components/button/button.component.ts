@@ -12,4 +12,6 @@ import { Component } from '@angular/core';
     +
   </button>`,
 })
-export class ButtonComponent {}
+export class ButtonComponent {
+
+}
