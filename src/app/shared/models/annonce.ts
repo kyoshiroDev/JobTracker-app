@@ -7,9 +7,9 @@ export interface Entreprise {
 
 export interface Content {
   aPropos: string;
-  descriptif: string[];
-  competence: string[];
-  avantage: string[];
+  descriptif: string;
+  competence: string;
+  avantage: string;
 }
 
 export interface Annonce {

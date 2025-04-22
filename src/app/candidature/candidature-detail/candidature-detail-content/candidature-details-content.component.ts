@@ -16,48 +16,36 @@ import { Annonce } from '../../../shared/models/annonce';
       révolutionnant ainsi la gestion de la sécurité web.
     </p>
     <h3>Descriptif de la mission :</h3>
-    <ul class="mb-2 pl-7">
-      <li class="list-disc">
+    <div class="mb-2 pl-7">
+      <p class="list-disc">
         Participer au développement du portail (front-office et back-office)
         afin d’enrichir les fonctionnalités de la solution.
-      </li>
-      <li class="list-disc">
         Collaborer étroitement avec les équipes techniques et les experts métier
         pour faire évoluer le produit.
-      </li>
-      <li class="list-disc">
         Proposer des améliorations en termes d’expérience utilisateur et assurer
         la qualité de vos développements par des tests rigoureux.
-      </li>
-    </ul>
+      </p>
+    </div>
     <h3>Compétences rechercher :</h3>
-    <ul class="mb-2 pl-7">
-      <li class="list-disc">
+    <div class="mb-2 pl-7">
+      <p class="list-disc">
         Excellente maîtrise des technologies front-end, notamment Angular.
-      </li>
-      <li class="list-disc">
         Connaissances en développement back-end (Java) ou forte motivation pour
         apprendre.
-      </li>
-      <li class="list-disc">Expérience avec Docker et Git (GitLab).</li>
-      <li class="list-disc">
+        Expérience avec Docker et Git (GitLab).
         Autonomie, esprit d’équipe et force de proposition indispensables.
-      </li>
-    </ul>
+      </p>
+    </div>
     <h3>Avantage dans la société :</h3>
-    <ul class="mb-2 pl-7">
-      <li class="list-disc">
+    <div class="mb-2 pl-7">
+      <p class="list-disc">
         Excellente maîtrise des technologies front-end, notamment Angular.
-      </li>
-      <li class="list-disc">
         Connaissances en développement back-end (Java) ou forte motivation pour
         apprendre.
-      </li>
-      <li class="list-disc">Expérience avec Docker et Git (GitLab).</li>
-      <li class="list-disc">
+        Expérience avec Docker et Git (GitLab).
         Autonomie, esprit d’équipe et force de proposition indispensables.
-      </li>
-    </ul>
+      </p>
+    </div>
   </div>`,
 })
 export class CandidatureDetailContentComponent {

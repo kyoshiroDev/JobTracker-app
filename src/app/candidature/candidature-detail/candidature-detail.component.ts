@@ -30,7 +30,7 @@ import { CandidatureDetailHeaderComponent } from './candidature-detail-header/ca
         />
 
         <!-- Contenu de l'annonce -->
-        <div class="p-6 overflow-y-scroll max-h-[420px]">
+        <div class="p-6 overflow-y-scroll max-h-[400px]">
           <fdw-candidature-detail-content [annonce]="annonce()" />
         </div>
         <!-- Footer de l'annonce -->
