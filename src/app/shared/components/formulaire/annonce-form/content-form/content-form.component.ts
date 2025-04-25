@@ -8,7 +8,7 @@ import {AnnonceForm, ContentForm} from '../../../../models/annonceForm';
     ReactiveFormsModule
   ],
   template: `
-    <div [formGroup]="contentForm()" class="flex flex-col gap-5">
+    <div [formGroup]="contentForm()" xmlns="http://www.w3.org/1999/html" class="flex flex-col gap-5">
       <!-- à propos -->
       <div class="flex flex-col w-full justify-center items-start gap-2 flex-nowrap">
         <label for="a-propos">À Propos :</label>
@@ -22,53 +22,39 @@ import {AnnonceForm, ContentForm} from '../../../../models/annonceForm';
         </textarea>
       </div>
       <!-- Descriptif -->
-      <div class="flex w-full justify-center items-center gap-2 flex-nowrap">
+      <div class="flex flex-col w-full justify-center items-start gap-2 flex-nowrap">
         <label for="descriptif">Descriptif :</label>
-        <input id="descriptif" type="text" formControlName="descriptif"
-               class="flex-1/2 border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all"/>
+        <textarea
+          id="descriptif"
+          rows="2"
+          placeholder="Saisissez vôtre texte ici ..."
+          formControlName="descriptif"
+          class="w-full border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all">
+        </textarea>
       </div>
       <!-- Competence -->
-      <div class="flex w-full justify-center items-center gap-2 flex-nowrap">
-        <label for="competence">Compétences :</label>
-        <input id="competence" type="text" formControlName="phone"
-               class="flex-1/2 border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all"/>
+      <div class="flex flex-col w-full justify-center items-start gap-2 flex-nowrap">
+        <label for="competence">Competences :</label>
+        <textarea
+          id="competence"
+          rows="2"
+          placeholder="Saisissez vôtre texte ici ..."
+          formControlName="competence"
+          class="w-full border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all">
+        </textarea>
       </div>
       <!-- Avantage -->
-      <div class="flex w-full justify-center items-center gap-2 flex-nowrap">
-        <label for="Avantage">Avantage :</label>
-        <input
-          id="Avantage"
-          type="text"
+      <div class="flex flex-col w-full justify-center items-start gap-2 flex-nowrap">
+        <label for="avantage">Avantages :</label>
+        <textarea
+          id="avantage"
+          rows="2"
+          placeholder="Saisissez vôtre texte ici ..."
           formControlName="avantage"
-          class="flex-1/2 border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all"/>
+          class="w-full border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all">
+        </textarea>
       </div>
-      <!-- Salaire -->
-      <div class="flex w-full justify-center items-center gap-2 flex-nowrap">
-        <label for="Salaire">Salaire :</label>
-        <input
-          id="Salaire"
-          type="number"
-          formControlName="salaire"
-          class="flex-1/2 border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all"/>
-      </div>
-      <!-- Contrat -->
-      <div class="flex w-full justify-center items-center gap-2 flex-nowrap">
-        <label for="Contrat">Contrat :</label>
-        <input
-          id="Contrat"
-          type="text"
-          formControlName="contrat"
-          class="flex-1/2 border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all"/>
-      </div>
-      <!-- AnnonceLink-->
-      <div class="flex w-full justify-center items-center gap-2 flex-nowrap">
-        <label for="annonceLink">Lien de l'annonce :</label>
-        <input
-          id="annonceLink"
-          type="text"
-          formControlName="annonceLink"
-          class="flex-1/2 border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all"/>
-      </div>
+
     </div>
   `,
 })

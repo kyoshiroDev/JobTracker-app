@@ -17,10 +17,9 @@ import { CandidatureDetailHeaderComponent } from './candidature-detail-header/ca
     CandidatureDetailFooterComponent,
   ],
   template: `
-    <div class="flex flex-col max-h-content justify-center items-center bg-JobTracker-gray">
       @if (annonce()) {
       <div
-        class="w-4xl mx-auto bg-JobTracker-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl my-6"
+        class="w-4xl mx-auto bg-JobTracker-white rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl my-6"
       >
         <!-- En-tête de l'annonce -->
         <fdw-candidature-detail-header
@@ -30,7 +29,7 @@ import { CandidatureDetailHeaderComponent } from './candidature-detail-header/ca
         />
 
         <!-- Contenu de l'annonce -->
-        <div class="p-6 overflow-y-scroll max-h-[400px]">
+        <div class="p-6 overflow-y-scroll">
           <fdw-candidature-detail-content [annonce]="annonce()" />
         </div>
         <!-- Footer de l'annonce -->
@@ -39,7 +38,6 @@ import { CandidatureDetailHeaderComponent } from './candidature-detail-header/ca
       } @else {
       <p>Chargement de l'annonce...</p>
       }
-    </div>
   `,
 })
 export class CandidatureDetailComponent {
