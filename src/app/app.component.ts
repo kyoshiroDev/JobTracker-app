@@ -10,22 +10,22 @@ import {ButtonComponent} from './shared/components/button/button.component';
   imports: [SidebarComponent, RouterOutlet, HeaderComponent, AnnonceFormComponent, ButtonComponent],
   template: `
     <div class="flex h-dvh">
-      @if (showModal()){
-      @defer{
-        <fdw-annonce-form (modalClose)="closeModal()"/>
-      }}
+      @if (showModal()) {
+        @defer {
+          <fdw-annonce-form (modalClose)="closeModal()"/>
+        }
+      }
       <!-- Sidebar fixe -->
-      <fdw-sidebar />
+      <fdw-sidebar/>
 
       <!-- Header -->
-      <div class="flex flex-1 flex-col max-h-dvh">
-        <fdw-header />
-
+        <fdw-header class="2xl:pl-[300px] fixed w-full"/>
 
         <!-- Contenu des pages selon les routes -->
-        <router-outlet></router-outlet>
-        <fdw-button (click)="openModal()" class="lg:flex lg:justify-center" />
-      </div>
+        <main class="w-full mx-auto mt-[120px] max-h-dvh overflow-y-auto">
+          <router-outlet></router-outlet>
+          <fdw-button (click)="openModal()" class="lg:flex lg:justify-center"/>
+        </main>
     </div>
   `,
 })

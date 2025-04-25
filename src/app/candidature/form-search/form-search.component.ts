@@ -9,11 +9,10 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
   standalone: true,
   imports: [ReactiveFormsModule],
   template: `
-    <div class="flex flex-col items-center justify-center w-full">
       <form
         (change)="formValue.emit(this.researchForm.value)"
         [formGroup]="researchForm"
-        class="bg-white p-3 rounded-lg shadow-md flex flex-wrap container justify-center gap-3 mt-5"
+        class="bg-white p-3 rounded-lg shadow-md flex flex-wrap container justify-center gap-3 mt-5 m-auto"
       >
         <p class="text-2xl text-JobTracker-blue font-semibold">RECHERCHER</p>
 
@@ -110,7 +109,6 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
           </button>
         </div>
       </form>
-    </div>
   `,
 })
 export class FormSearchComponent {

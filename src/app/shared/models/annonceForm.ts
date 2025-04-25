@@ -18,7 +18,8 @@ export interface AnnonceForm {
   entreprise: FormGroup<EntrepriseForm>;
   content: FormGroup<ContentForm>;
   salaire: FormControl<number | null>;
-  contrat: FormControl<string | null>;
+  typeContrat: FormControl<'CDI' | 'CDD' | 'Freelance' | 'Stage' | null>;
+  modeTravail: FormControl<'fullremote' | 'presentiel' | 'hybride' | null>;
   annonceLink: FormControl<string | null>;
   status: FormControl<string | null>;
   createdAt: FormControl<Date | null>;

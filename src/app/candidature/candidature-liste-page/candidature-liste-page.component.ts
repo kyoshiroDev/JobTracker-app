@@ -1,5 +1,4 @@
 import {Component, computed, inject, Signal, signal} from '@angular/core';
-import {ButtonComponent} from '../../shared/components/button/button.component';
 import {CandidatureComponent} from '../candidature-card/candidature-card.component';
 import {AnnoncesService} from '../../shared/services/annonces/annonces.service';
 import {Annonce} from '../../shared/models/annonce';
@@ -8,26 +7,25 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'fdw-candidatures',
-  imports: [ButtonComponent, CandidatureComponent, FormSearchComponent],
+  imports: [ CandidatureComponent, FormSearchComponent],
   template: `
-    <fdw-form-search
-      [annonces]="annonces()"
-      (formValue)="annonceSearch.set($event)"
-      (resetForm)="annonceSearch.set({})"
-    />
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 gap-2 p-8 max-h-[48vh]
-      md:max-h-[50vh] lg:max-h-[60vh] xl:max-h-[65vh] mt-5 overflow-y-auto bg-JobTracker-gray"
-    >
-      @for (annonce of annonceFilter(); track annonce.id) {
-        <fdw-candidature (goToDetail)="annonceDetail($event)" [annonce]="annonce"/>
-      } @empty {
-        @for (annonce of annonces(); track annonce.id) {
+      <fdw-form-search
+        [annonces]="annonces()"
+        (formValue)="annonceSearch.set($event)"
+        (resetForm)="annonceSearch.set({})"
+      />
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-2 p-8 mt-5"
+      >
+        @for (annonce of annonceFilter(); track annonce.id) {
           <fdw-candidature (goToDetail)="annonceDetail($event)" [annonce]="annonce"/>
+        } @empty {
+          @for (annonce of annonces(); track annonce.id) {
+            <fdw-candidature (goToDetail)="annonceDetail($event)" [annonce]="annonce"/>
+          }
         }
-      }
-    </div>
-    <fdw-button/>
+      </div>
+
   `,
 })
 export class CandidaturesComponent {
