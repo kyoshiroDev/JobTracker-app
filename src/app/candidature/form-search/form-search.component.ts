@@ -1,7 +1,7 @@
 import { Component, inject, input, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Annonce } from '../../shared/models/annonce';
-import { AnnonceForm, EntrepriseForm } from '../../shared/models/annonceForm';
+import {AnnonceForm, ContentForm, EntrepriseForm} from '../../shared/models/annonceForm';
 import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
 
 @Component({
@@ -40,7 +40,6 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
             </option>
             } }
           </select>
-
           <select
             aria-label="ville"
             formControlName="ville"
@@ -55,7 +54,7 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
             } }
           </select>
         </fieldset>
-        <fieldset class="flex justify-around gap-3 w-[500px]">
+        <fieldset formGroupName="content" class="flex justify-around gap-3 w-[500px]">
           <select
             aria-label="salaire"
             formControlName="salaire"
@@ -64,10 +63,9 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
             <option value="null" selected>Choisissez un revenu</option>
             @if(annonces().length > 0) { @for (annonce of annonces(); track
             annonce.id) {
-            <option [value]="annonce.salaire">{{ annonce.salaire }} €</option>
+            <option [value]="annonce.content.salaire">{{ annonce.content.salaire }} €</option>
             } }
           </select>
-
           <select
             aria-label="status"
             formControlName="status"
@@ -75,7 +73,7 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
           >
             <option value="null" selected>Choisissez un statut</option>
             @for (status of statusList; track status.label) {
-            <option [value]="status.label">{{ status.label }}</option>
+              <option [value]="status.label">{{ status.label }}</option>
             }
           </select>
         </fieldset>
@@ -116,11 +114,12 @@ export class FormSearchComponent {
 
   readonly annonces = input.required<Annonce[]>();
   readonly formValue = output<FormSearchComponent['researchForm']['value']>();
-  readonly resetForm = output<void>();
+  readonly resetForm = output();
 
   researchForm = new FormGroup<
-    Pick<AnnonceForm, 'poste' | 'salaire' | 'status'> & {
-      entreprise: FormGroup<Pick<EntrepriseForm, 'name' | 'ville'>>;
+    Pick<AnnonceForm, 'poste'> & {
+    entreprise: FormGroup<Pick<EntrepriseForm, 'name' | 'ville'>>;
+    content: FormGroup<Pick<ContentForm, 'salaire' | 'status'>>;
     }
   >({
     poste: new FormControl(null),
@@ -128,7 +127,9 @@ export class FormSearchComponent {
       name: new FormControl(null),
       ville: new FormControl(null),
     }),
-    salaire: new FormControl(null),
-    status: new FormControl(null),
+    content: new FormGroup<Pick<ContentForm, 'salaire' | 'status'>>({
+      salaire: new FormControl(null),
+      status: new FormControl(null),
+    }),
   });
 }

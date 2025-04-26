@@ -20,12 +20,12 @@ export class AnnoncesService {
         descriptif: '',
         competence: '',
         avantage: '',
+        typeContrat: 'CDI',
+        modeTravail: 'fullremote',
+        salaire: 35000,
+        annonceLink: '',
+        status: 'En attente',
       },
-      typeContrat: 'CDI',
-      modeTravail: 'fullremote',
-      salaire: 35000,
-      annonceLink: '',
-      status: 'En attente',
       createdAT: new Date(),
     },
     {
@@ -43,12 +43,12 @@ export class AnnoncesService {
         descriptif: '',
         competence: '',
         avantage: '',
+        typeContrat: 'CDI',
+        modeTravail: 'fullremote',
+        salaire: 40000,
+        annonceLink: '',
+        status: 'Entretien',
       },
-      typeContrat: 'CDI',
-      modeTravail: 'fullremote',
-      salaire: 40000,
-      annonceLink: '',
-      status: 'Entretien',
       createdAT: new Date(),
     },
     {
@@ -65,12 +65,13 @@ export class AnnoncesService {
         descriptif: '',
         competence: '',
         avantage: '',
+        typeContrat: 'CDI',
+        modeTravail: 'fullremote',
+        salaire: 50000,
+        annonceLink: '',
+        status: 'En attente',
       },
-      typeContrat: 'CDI',
-      modeTravail: 'fullremote',
-      salaire: 50000,
-      annonceLink: '',
-      status: 'En attente',
+
       createdAT: new Date(),
     },
     {
@@ -87,12 +88,12 @@ export class AnnoncesService {
         descriptif: '',
         competence: '',
         avantage: '',
+        typeContrat: 'CDI',
+        modeTravail: 'fullremote',
+        salaire: 45000,
+        annonceLink: '',
+        status: 'À relancer',
       },
-      typeContrat: 'CDI',
-      modeTravail: 'fullremote',
-      salaire: 45000,
-      annonceLink: '',
-      status: 'À relancer',
       createdAT: new Date(),
     },
     {
@@ -109,12 +110,12 @@ export class AnnoncesService {
         descriptif: '',
         competence: '',
         avantage: '',
-      },
-      typeContrat: 'CDI',
+        typeContrat: 'CDI',
       modeTravail: 'fullremote',
       salaire: 55000,
       annonceLink: '',
       status: 'Rejetée',
+      },
       createdAT: new Date(),
     },
   ]);
@@ -125,8 +126,8 @@ export class AnnoncesService {
 
   readonly countByStatus = computed(() => {
     return this.annonces().reduce((acc, annonce) => {
-      const count = acc.get(annonce.status) || 0;
-      acc.set(annonce.status, count + 1);
+      const count = acc.get(annonce.content.status) || 0;
+      acc.set(annonce.content.status, count + 1);
       return acc;
     }, new Map<string, number>());
   });

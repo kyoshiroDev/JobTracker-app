@@ -10,6 +10,11 @@ export interface Content {
   descriptif: string;
   competence: string;
   avantage: string;
+  salaire: number;
+  typeContrat: 'CDI' | 'CDD' | 'Freelance' | 'Stage';
+  modeTravail: 'fullremote' | 'presentiel' | 'hybride';
+  annonceLink: string;
+  status: 'En attente' | 'Entretien' | 'À relancer' | 'Rejetée';
 }
 
 export interface Annonce {
@@ -17,10 +22,6 @@ export interface Annonce {
   poste: string;
   entreprise: Entreprise;
   content: Content;
-  salaire: number;
-  typeContrat: 'CDI' | 'CDD' | 'Freelance' | 'Stage';
-  modeTravail: 'fullremote' | 'presentiel' | 'hybride';
-  annonceLink: string;
-  status: 'En attente' | 'Entretien' | 'À relancer' | 'Rejetée';
+
   createdAT?: Date;
 }

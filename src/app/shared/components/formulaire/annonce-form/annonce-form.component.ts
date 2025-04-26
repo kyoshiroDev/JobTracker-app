@@ -46,56 +46,7 @@ import {ContentFormComponent} from './content-form/content-form.component';
               <legend class="text-center font-semibold text-2xl px-2 text-JobTracker-blue">Contenue de l'annonce
               </legend>
               <fdw-content-form [contentForm]="formAnnonce.controls.content"/>
-            <div class="flex w-full  justify-between items-center">
-              <!-- Salaire -->
-              <div class="flex items-center justify-center gap-2">
-                <label class="min-w-fit" for="salaire">Salaire :</label>
-                <input
-                  id="salaire"
-                  type="number"
-                  placeholder="10000"
-                  formControlName="salaire"
-                  class="max-w-16 text-center border border-gray-300 bg-white py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all"/>
 
-              </div>
-              <!-- Contrat -->
-              <div class="flex items-center justify-center gap-2">
-                <label class="min-w-fit" for="typeContrat">Contrat :</label>
-                <select
-                  id="typeContrat"
-                  formControlName="typeContrat"
-                  class="border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all">
-                  <option value='null' hidden>Contrat ...</option>
-                  <option value="CDI">CDI</option>
-                  <option value="CDD">CDD</option>
-                  <option value="Freelance">Freelance</option>
-                  <option value="Stage">Stage</option>
-                </select>
-              </div>
-              <!-- Mode de travail -->
-              <div class="flex items-center justify-center gap-2">
-                <label class="min-w-fit" for="modeTravail">Présence :</label>
-                <select
-                  id="modeTravail"
-                  formControlName="modeTravail"
-                  class="border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all">
-                  <option value="null" hidden>Présence ...</option>
-                  <option value="fullremote">Fullremote</option>
-                  <option value="presentiel">Présentiel</option>
-                  <option value="hybride">Hybride</option>
-                </select>
-              </div>
-            </div>
-            <!-- AnnonceLink-->
-            <div class="flex w-full justify-center items-center gap-2 flex-nowrap">
-              <label for="annonceLink">Lien de l'annonce :</label>
-              <input
-                id="annonceLink"
-                type="text"
-                placeholder="https://www.google.com"
-                formControlName="annonceLink"
-                class="flex-1/2 border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all"/>
-            </div>
             </fieldset>
             <button
               class="m-auto w-70 h-10 bg-JobTracker-side hover:bg-JobTracker-side-hover text-JobTracker-gray font-semibold cursor-pointer rounded-lg"
@@ -139,12 +90,12 @@ export class AnnonceFormComponent {
       descriptif: new FormControl<string | null>(null),
       competence: new FormControl<string | null>(null),
       avantage: new FormControl<string | null>(null),
+      salaire: new FormControl<number | null>(null),
+      typeContrat: new FormControl<'CDI' | 'CDD' | 'Freelance' | 'Stage' | null>(null),
+      modeTravail: new FormControl<'fullremote' | 'presentiel' | 'hybride' | null>(null),
+      annonceLink: new FormControl<string | null>(null),
+      status: new FormControl<string | null>('En attente'),
     }),
-    salaire: new FormControl<number | null>(null),
-    typeContrat: new FormControl<'CDI' | 'CDD' | 'Freelance' | 'Stage' | null>(null),
-    modeTravail: new FormControl<'fullremote' | 'presentiel' | 'hybride' | null>(null),
-    annonceLink: new FormControl<string | null>(null),
-    status: new FormControl<string | null>('En attente'),
     createdAt: new FormControl<Date | null>(new Date(Date.now())),
   })
 }

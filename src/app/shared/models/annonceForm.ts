@@ -12,15 +12,15 @@ export interface ContentForm {
   descriptif: FormControl<string | null>;
   competence: FormControl<string | null>;
   avantage: FormControl<string | null>;
+  salaire: FormControl<number | null>;
+  typeContrat: FormControl<'CDI' | 'CDD' | 'Freelance' | 'Stage' | null>;
+  modeTravail: FormControl<'fullremote' | 'presentiel' | 'hybride' | null>;
+  status: FormControl<string | null>;
+  annonceLink: FormControl<string | null>;
 }
 export interface AnnonceForm {
   poste: FormControl<string | null>;
   entreprise: FormGroup<EntrepriseForm>;
   content: FormGroup<ContentForm>;
-  salaire: FormControl<number | null>;
-  typeContrat: FormControl<'CDI' | 'CDD' | 'Freelance' | 'Stage' | null>;
-  modeTravail: FormControl<'fullremote' | 'presentiel' | 'hybride' | null>;
-  annonceLink: FormControl<string | null>;
-  status: FormControl<string | null>;
   createdAt: FormControl<Date | null>;
 }
