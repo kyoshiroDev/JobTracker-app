@@ -163,7 +163,7 @@ import { RouterLink } from '@angular/router';
               />
             </g>
           </svg>
-          {{ annonce().salaire | currency : 'EUR' : 'symbol' : '1.0-0' }}
+          {{ annonce().content.salaire | currency : 'EUR' : 'symbol' : '1.0-0' }}
           /an
         </div>
 
@@ -183,7 +183,7 @@ import { RouterLink } from '@angular/router';
               d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
             />
           </svg>
-          {{ annonce().typeContrat }}
+          {{ annonce().content.typeContrat }}
         </div>
 
         <!-- Mode de travail -->
@@ -202,7 +202,7 @@ import { RouterLink } from '@angular/router';
               d="M4.616 20q-.691 0-1.153-.462T3 18.384V8.616q0-.691.463-1.153T4.615 7H9V5.615q0-.69.463-1.153T10.616 4h2.769q.69 0 1.153.462T15 5.615V7h4.385q.69 0 1.152.463T21 8.616v9.769q0 .69-.463 1.153T19.385 20zm0-1h14.769q.23 0 .423-.192t.192-.424V8.616q0-.231-.192-.424T19.385 8H4.615q-.23 0-.423.192T4 8.616v9.769q0 .23.192.423t.423.192M10 7h4V5.615q0-.23-.192-.423T13.385 5h-2.77q-.23 0-.423.192T10 5.615zM4 19V8z"
             />
           </svg>
-          {{ annonce().modeTravail }}
+          {{ annonce().content.modeTravail }}
         </div>
       </div>
     </div>

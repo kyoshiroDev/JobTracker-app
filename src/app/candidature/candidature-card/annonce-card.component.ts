@@ -22,7 +22,7 @@ import { RouterLink } from '@angular/router';
       <div
         class="w-[100px] flex flex-col justify-center text-2xl text-JobTracker-blue font-semibold"
       >
-        <p>{{ annonce().salaire }} €</p>
+        <p>{{ annonce().content.salaire }} €</p>
       </div>
       <div class="grow pl-15">
         <p class="text-2xl text-JobTracker-blue font-semibold">
@@ -40,7 +40,7 @@ import { RouterLink } from '@angular/router';
           [class]="statusConfig()"
           class="rounded-4xl p-2 w-full text-center text-JobTracker-white font-semibold"
         >
-          {{ annonce().status }}
+          {{ annonce().content.status }}
         </p>
       </div>
     </a>
@@ -54,7 +54,7 @@ export class CandidatureComponent {
 
   readonly statusConfig: Signal<string | undefined> = computed(() => {
     const statusConfig = this.status.find(
-      (config) => config.label === this.annonce().status
+      (config) => config.label === this.annonce().content.status
     );
     return statusConfig ? statusConfig.colorClassBg : 'bg-JobTracker-blue';
   });

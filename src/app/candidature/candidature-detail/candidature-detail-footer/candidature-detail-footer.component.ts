@@ -13,14 +13,14 @@ import { STATUS_COLOR } from '../../../shared/tokens/status-color-token';
       </div>
       <span
         class="px-6 py-3 text-sm text-JobTracker-white font-semibold rounded-full"
-        [class]="statusColorClass(this.annonce().status)"
+        [class]="statusColorClass(this.annonce().content.status)"
       >
-        {{ annonce().status }}
+        {{ annonce().content.status }}
       </span>
     </div>
     <div class="flex justify-center p-4 bg-JobTracker-gray">
       <a
-        [href]="annonce().annonceLink"
+        [href]="annonce().content.annonceLink"
         target="_blank"
         class="w-[250px] px-5 py-2 bg-JobTracker-side hover:bg-JobTracker-side-hover text-white font-medium rounded-md transition-colors duration-200 text-center items-center"
       >

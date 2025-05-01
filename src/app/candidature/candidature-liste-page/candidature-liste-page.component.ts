@@ -1,5 +1,5 @@
 import {Component, computed, inject, Signal, signal} from '@angular/core';
-import {CandidatureComponent} from '../candidature-card/candidature-card.component';
+import {CandidatureComponent} from '../candidature-card/annonce-card.component';
 import {AnnoncesService} from '../../shared/services/annonces/annonces.service';
 import {Annonce} from '../../shared/models/annonce';
 import {FormSearchComponent} from '../form-search/form-search.component';
@@ -25,7 +25,6 @@ import {Router} from '@angular/router';
           }
         }
       </div>
-
   `,
 })
 export class CandidaturesComponent {
@@ -57,8 +56,8 @@ export class CandidaturesComponent {
             .replaceAll('-', '') ||
         annonce.entreprise.name === search.entreprise?.name ||
         annonce.entreprise.ville === search.entreprise?.ville ||
-        annonce.salaire.toString() === search.salaire?.toString() ||
-        annonce.status === search.status
+        annonce.content.salaire.toString() === search.content?.salaire?.toString() ||
+        annonce.content.status === search.content?.status,
     );
   });
 
