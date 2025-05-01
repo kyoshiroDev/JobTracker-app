@@ -1,5 +1,5 @@
 import {Component, computed, inject, Signal, signal} from '@angular/core';
-import {CandidatureComponent} from '../candidature-card/candidature-card.component';
+import {CandidatureComponent} from '../candidature-card/annonce-card.component';
 import {AnnoncesService} from '../../shared/services/annonces/annonces.service';
 import {Annonce} from '../../shared/models/annonce';
 import {FormSearchComponent} from '../form-search/form-search.component';

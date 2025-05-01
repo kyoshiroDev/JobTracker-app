@@ -26,13 +26,13 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
             <td class="hidden lg:table-cell border border-JobTracker-gray">{{ annonce.entreprise.name }}</td>
             <td class="hidden lg:table-cell border border-JobTracker-gray">{{ annonce.entreprise.ville }}</td>
             <td
-              [class]="statusColorClass(annonce.status)"
+              [class]="statusColorClass(annonce.content.status)"
               class="hidden lg:table-cell font-bold border border-JobTracker-gray"
             >
-              {{ annonce.status }}
+              {{ annonce.content.status }}
             </td>
             <td
-              [class]="statusColorClass(annonce.status)"
+              [class]="statusColorClass(annonce.content.status)"content.
               class="lg:hidden relative group"
             >
               <svg
@@ -49,7 +49,7 @@ import { STATUS_COLOR } from '../../shared/tokens/status-color-token';
               </svg>
               <span class=" absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden px-2
   py-1 text-white text-xs rounded bg-gray-700 group-hover:inline-block whitespace-nowrap">
-                {{ annonce.status }}
+                {{ annonce.content.status }}
               </span>
             </td>
           </tr>

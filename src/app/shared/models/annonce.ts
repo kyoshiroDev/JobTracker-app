@@ -22,6 +22,5 @@ export interface Annonce {
   poste: string;
   entreprise: Entreprise;
   content: Content;
-
   createdAT?: Date;
 }
