@@ -1,6 +1,6 @@
 import { Provider } from '@angular/core';
 import { STATUS_COLOR } from './status-color-token';
-import { StatusConfig } from '../models/statusConfig.model';
+import { StatusConfig } from './statusConfig.model';
 
 export const STATUS_COLOR_PROVIDER: Provider = {
   provide: STATUS_COLOR,
