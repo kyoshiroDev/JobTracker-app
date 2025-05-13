@@ -7,7 +7,7 @@ import {
   Signal,
 } from '@angular/core';
 import { Annonce } from '../annonce';
-import { STATUS_COLOR } from '../../app/shared/tokens/status-color-token';
+import { STATUS_COLOR } from '../../app/tokens/status-color-token';
 import { RouterLink } from '@angular/router';
 
 @Component({

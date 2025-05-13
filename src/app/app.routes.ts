@@ -1,5 +1,5 @@
-import { CandidaturesComponent } from '../annonce/annonce-liste-page/annonce-liste-page.component';
-import { DashboardComponent } from '../dashboard/dashboard-page/dashboard-page.component';
+import { CandidaturesComponent } from '../annonce/annonce-liste/annonce-liste-page.component';
+import { DashboardComponent } from '../dashboard/dashboard-page.component';
 import { AnnonceDetailComponent } from '../annonce/annonce-detail/annonce-detail.component';
 import { Routes } from '@angular/router';
 

@@ -1,6 +1,6 @@
 import {Component, input, InputSignal} from '@angular/core';
 import {FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {AnnonceForm, ContentForm} from '../../annonceForm';
+import {AnnonceForm, ContentForm} from './annonceForm';
 
 @Component({
   selector: 'fdw-content-form',

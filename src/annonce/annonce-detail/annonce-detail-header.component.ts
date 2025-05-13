@@ -1,5 +1,5 @@
 import { Component, input, output } from '@angular/core';
-import { Annonce } from '../../annonce';
+import { Annonce } from '../annonce';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 

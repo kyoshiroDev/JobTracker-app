@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
-import { Annonce } from '../../annonce';
+import { Annonce } from '../annonce';
 
 @Component({
   selector: 'fdw-annonce-detail-content',

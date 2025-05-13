@@ -1,8 +1,8 @@
 import { Component, inject, input, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Annonce } from '../annonce';
-import {AnnonceForm, ContentForm, EntrepriseForm} from '../annonceForm';
-import { STATUS_COLOR } from '../../app/shared/tokens/status-color-token';
+import {AnnonceForm, ContentForm, EntrepriseForm} from './annonceForm';
+import { STATUS_COLOR } from '../../app/tokens/status-color-token';
 
 @Component({
   selector: 'fdw-annonce-form-search',

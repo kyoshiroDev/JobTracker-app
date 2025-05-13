@@ -1,6 +1,6 @@
 import {Component, input, InputSignal,} from '@angular/core';
 import {FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {EntrepriseForm} from '../../annonceForm';
+import {EntrepriseForm} from './annonceForm';
 
 @Component({
   selector: 'fdw-entreprise-form',

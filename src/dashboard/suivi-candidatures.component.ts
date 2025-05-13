@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AnnoncesService } from '../../annonce/annonces.service';
-import { STATUS_COLOR } from '../../app/shared/tokens/status-color-token';
+import { AnnoncesService } from '../annonce/annonces.service';
+import { STATUS_COLOR } from '../app/tokens/status-color-token';
 
 @Component({
   selector: 'fdw-suivi-candidatures',

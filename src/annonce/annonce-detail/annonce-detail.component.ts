@@ -4,9 +4,9 @@ import { Annonce } from '../annonce';
 import { AnnoncesService } from '../annonces.service';
 
 import { Router } from '@angular/router';
-import { AnnonceDetailContentComponent } from './annonce-detail-content/annonce-details-content.component';
-import { AnnonceDetailFooterComponent } from './annonce-detail-footer/annonce-detail-footer.component';
-import { AnnonceDetailHeaderComponent } from './annonce-detail-header/annonce-detail-header.component';
+import { AnnonceDetailContentComponent } from './annonce-details-content.component';
+import { AnnonceDetailFooterComponent } from './annonce-detail-footer.component';
+import { AnnonceDetailHeaderComponent } from './annonce-detail-header.component';
 
 @Component({
   selector: 'fdw-annonce-detail',

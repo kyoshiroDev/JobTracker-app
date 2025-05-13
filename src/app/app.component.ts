@@ -1,9 +1,9 @@
 import {Component, signal, WritableSignal} from '@angular/core';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './shared/header/header.component';
+import { HeaderComponent } from './header/header.component';
 import {AnnonceFormComponent} from '../annonce/annonce-form/annonce-form.component';
-import {ButtonComponent} from './shared/button/button.component';
+import {ButtonComponent} from './button/button.component';
 
 @Component({
   selector: 'fdw-root',

@@ -1,9 +1,9 @@
 import {Component, computed, inject, Signal, signal} from '@angular/core';
 import {AnnoncesService} from '../annonces.service';
 import {Annonce} from '../annonce';
-import {AnnonceFormSearchComponent} from '../annonce-form-search/annonce-form-search.component';
+import {AnnonceFormSearchComponent} from '../annonce-form/annonce-form-search.component';
 import {Router} from '@angular/router';
-import {AnnonceCardComponent} from '../annonce-card/annonce-card.component';
+import {AnnonceCardComponent} from './annonce-card.component';
 
 @Component({
   selector: 'fdw-annonce',

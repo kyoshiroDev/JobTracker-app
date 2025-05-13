@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
-import { Annonce } from '../../annonce';
-import { STATUS_COLOR } from '../../../app/shared/tokens/status-color-token';
+import { Annonce } from '../annonce';
+import { STATUS_COLOR } from '../../app/tokens/status-color-token';
 
 @Component({
   selector: 'fdw-annonce-detail-footer',

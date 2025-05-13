@@ -1,8 +1,8 @@
 import {Component, output, OutputEmitterRef, signal, WritableSignal} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {AnnonceForm, ContentForm, EntrepriseForm} from '../annonceForm';
-import {EntrepriseFormComponent} from './entreprise-form/entreprise-form.component';
-import {ContentFormComponent} from './content-form/content-form.component';
+import {AnnonceForm, ContentForm, EntrepriseForm} from './annonceForm';
+import {EntrepriseFormComponent} from './entreprise-form.component';
+import {ContentFormComponent} from './content-form.component';
 
 @Component({
   selector: 'fdw-annonce-form',
