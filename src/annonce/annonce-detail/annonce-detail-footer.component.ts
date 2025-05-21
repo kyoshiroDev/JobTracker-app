@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, input} from '@angular/core';
 import { Annonce } from '../annonce';
 import { STATUS_COLOR } from '../../app/tokens/status-color-token';
 
 @Component({
   selector: 'fdw-annonce-detail-footer',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule],
   template: `
     <div class="flex justify-between items-center px-12 py-4 bg-JobTracker-gray">

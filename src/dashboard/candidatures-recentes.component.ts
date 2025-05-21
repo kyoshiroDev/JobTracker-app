@@ -1,4 +1,4 @@
-import { Component, HostListener, inject, signal, Signal } from '@angular/core';
+import {ChangeDetectionStrategy, Component, HostListener, inject, signal, Signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnnoncesService } from '../annonce/annonces.service';
 import { Annonce } from '../annonce/annonce';
@@ -6,6 +6,7 @@ import { STATUS_COLOR } from '../app/tokens/status-color-token';
 
 @Component({
   selector: 'fdw-candidatures-recentes',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule],
   template: `
     <div class="max-w-[92%] m-auto bg-JobTracker-white p-5 rounded-xl  drop-shadow-lg">

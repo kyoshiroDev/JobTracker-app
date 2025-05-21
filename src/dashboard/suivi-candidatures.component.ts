@@ -1,10 +1,11 @@
-import { Component, inject } from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnnoncesService } from '../annonce/annonces.service';
 import { STATUS_COLOR } from '../app/tokens/status-color-token';
 
 @Component({
   selector: 'fdw-suivi-candidatures',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule],
   template: `
     <div class="flex justify-center gap-20 h-[90px] max-w-screen px-4">

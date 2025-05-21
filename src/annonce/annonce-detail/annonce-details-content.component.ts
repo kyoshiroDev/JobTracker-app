@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, input } from '@angular/core';
+import {ChangeDetectionStrategy, Component, input} from '@angular/core';
 import { Annonce } from '../annonce';
 
 @Component({
   selector: 'fdw-annonce-detail-content',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule],
   template: ` <div class="mb-6 prose max-w-none">
     <h3>À propos de l’offre d’emploi :</h3>

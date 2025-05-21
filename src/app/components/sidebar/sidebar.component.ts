@@ -1,9 +1,10 @@
-import { Component, inject, signal } from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, signal} from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { Sidebarmenu } from './sidebarmenu';
 
 @Component({
   selector: 'fdw-sidebar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterLink, RouterLinkActive],
   template: `
     <div class="bg-JobTracker-side h-full w-[300px]
@@ -42,7 +43,7 @@ export class SidebarComponent {
 
   protected readonly sidebar = signal<Sidebarmenu[]>([
     { id: 1, name: '📊 Dashboard', routerLink: '/' },
-    { id: 2, name: '📂 Mes Candidatures', routerLink: 'candidatures' },
+    { id: 2, name: '📂 Mes Annonces', routerLink: 'annonces' },
     //{id:3, name: "📝 Ma TodoList", routerLink:"todoliste"},
     //{id:4, name: "🔍 Offres d'Emploi", routerLink:"Offres-d-emploi"},
     //{id:5, name: "⚙️ Parametre", routerLink:"setting"},

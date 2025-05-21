@@ -1,10 +1,11 @@
-import { Component, input, output } from '@angular/core';
+import {ChangeDetectionStrategy, Component, input, output} from '@angular/core';
 import { Annonce } from '../annonce';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'fdw-annonce-detail-header',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, RouterLink],
   template: `
     <div class="bg-JobTracker-side p-6 relative">
