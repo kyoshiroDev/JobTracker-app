@@ -1,4 +1,4 @@
-import { Component, inject, input, output } from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, input, output} from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Annonce } from '../annonce';
 import {AnnonceForm, ContentForm, EntrepriseForm} from './annonceForm';
@@ -6,6 +6,7 @@ import { STATUS_COLOR } from '../../app/tokens/status-color-token';
 
 @Component({
   selector: 'fdw-annonce-form-search',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [ReactiveFormsModule],
   template: `

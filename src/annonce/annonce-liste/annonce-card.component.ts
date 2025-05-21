@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   computed,
   inject,
@@ -12,11 +13,12 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'fdw-annonce-card',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterLink],
   template: `
     <a
       [routerLink]="['/annonce', annonce().id]"
-      (click)="handleClick($event)"
+
       class="flex flex-col items-center xl:flex-row min-h-[152px] xl:text-left gap-1 bg-JobTracker-white rounded-md p-4 shadow-md cursor-pointer hover:scale-102 transition-transform duration-500 ease-in-out"
     >
       <div
@@ -58,10 +60,4 @@ export class AnnonceCardComponent {
     );
     return statusConfig ? statusConfig.colorClassBg : 'bg-JobTracker-blue';
   });
-
-  handleClick(event: Event) {
-    event.preventDefault(); // Empêche l'action par défaut du lien
-    event.stopPropagation(); // Empêche l'événement de remonter et d'être capté ailleurs
-    this.goToDetail.emit(this.annonce().id);
-  }
 }

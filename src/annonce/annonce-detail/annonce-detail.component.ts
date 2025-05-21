@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, inject, input, Signal } from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, inject, input, Signal} from '@angular/core';
 import { Annonce } from '../annonce';
 import { AnnoncesService } from '../annonces.service';
 
@@ -10,6 +10,7 @@ import { AnnonceDetailHeaderComponent } from './annonce-detail-header.component'
 
 @Component({
   selector: 'fdw-annonce-detail',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
     AnnonceDetailHeaderComponent,

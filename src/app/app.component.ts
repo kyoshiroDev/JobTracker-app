@@ -1,12 +1,13 @@
-import {Component, signal, WritableSignal} from '@angular/core';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import {ChangeDetectionStrategy, Component, signal, WritableSignal} from '@angular/core';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import {AnnonceFormComponent} from '../annonce/annonce-form/annonce-form.component';
-import {ButtonComponent} from './button/button.component';
+import {ButtonComponent} from './components/button/button.component';
 
 @Component({
   selector: 'fdw-root',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [SidebarComponent, RouterOutlet, HeaderComponent, AnnonceFormComponent, ButtonComponent],
   template: `
     <div class="flex h-dvh">

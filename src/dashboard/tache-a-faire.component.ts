@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
+import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
 
 @Component({
   selector: 'fdw-tache-a-faire',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
   template: `
     <div class="w-[46%] ml-[65px] bg-JobTracker-white p-5 rounded-xl  drop-shadow-lg">

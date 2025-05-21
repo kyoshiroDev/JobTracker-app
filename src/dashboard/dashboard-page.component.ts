@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import { CandidaturesRecentesComponent } from './candidatures-recentes.component';
 import { SuiviCandidaturesComponent } from './suivi-candidatures.component';
 //import { TacheAFaireComponent } from './widgets/tache-a-faire/tache-a-faire.component';
-import { ButtonComponent } from '../app/button/button.component';
+import { ButtonComponent } from '../app/components/button/button.component';
 
 @Component({
   selector: 'fdw-dashboard',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     SuiviCandidaturesComponent,
     CandidaturesRecentesComponent,

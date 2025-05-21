@@ -1,9 +1,10 @@
-import {Component, input, InputSignal,} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input, InputSignal,} from '@angular/core';
 import {FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {EntrepriseForm} from './annonceForm';
 
 @Component({
   selector: 'fdw-entreprise-form',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     ReactiveFormsModule
   ],
