@@ -8,11 +8,11 @@ export interface EntrepriseForm {
 }
 
 export interface ContentForm {
-  aPropos: FormControl<string | null>;
+  about: FormControl<string | null>;
   descriptif: FormControl<string | null>;
   competence: FormControl<string | null>;
   avantage: FormControl<string | null>;
-  salaire: FormControl<number | null>;
+  salaire: FormControl<string | null>;
   typeContrat: FormControl<'CDI' | 'CDD' | 'Freelance' | 'Stage' | null>;
   modeTravail: FormControl<'fullremote' | 'presentiel' | 'hybride' | null>;
   status: FormControl<string | null>;

@@ -6,7 +6,7 @@ export interface Entreprise {
 }
 
 export interface Content {
-  aPropos: string;
+  about: string;
   descriptif: string;
   competence: string;
   avantage: string;
@@ -22,5 +22,5 @@ export interface Annonce {
   poste: string;
   entreprise: Entreprise;
   content: Content;
-  createdAT?: Date;
+  createdAt: Date;
 }
