@@ -58,6 +58,6 @@ export class AnnonceDetailComponent {
   });
 
   returnListeAnnonce() {
-    this.router.navigate(['/candidatures']);
+    this.router.navigate(['/annonces']);
   }
 }

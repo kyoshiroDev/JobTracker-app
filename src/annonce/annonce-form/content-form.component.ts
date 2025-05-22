@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, input, InputSignal} from '@angular/core';
 import {FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {AnnonceForm, ContentForm} from './annonceForm';
+import {ContentForm} from './annonceForm';
 
 @Component({
   selector: 'fdw-content-form',
@@ -12,12 +12,12 @@ import {AnnonceForm, ContentForm} from './annonceForm';
     <div [formGroup]="contentForm()" xmlns="http://www.w3.org/1999/html" class="flex flex-col gap-5">
       <!-- à propos -->
       <div class="flex flex-col w-full justify-center items-start gap-2 flex-nowrap">
-        <label for="a-propos">À Propos :</label>
+        <label for="about">À Propos :</label>
         <textarea
-          id="a-propos"
+          id="about"
           rows="2"
           placeholder="Saisissez vôtre texte ici ..."
-          formControlName="aPropos"
+          formControlName="about"
           class="w-full border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all"
         >
         </textarea>
@@ -61,7 +61,7 @@ import {AnnonceForm, ContentForm} from './annonceForm';
           <label class="min-w-fit" for="salaire">Salaire :</label>
           <input
             id="salaire"
-            type="number"
+            type="text"
             placeholder="10000"
             formControlName="salaire"
             class="max-w-16 text-center border border-gray-300 bg-white py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all"/>
@@ -89,7 +89,7 @@ import {AnnonceForm, ContentForm} from './annonceForm';
             formControlName="modeTravail"
             class="border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all">
             <option value="null" hidden>Présence ...</option>
-            <option value="fullremote">Fullremote</option>
+            <option value="fullremote">Full remote</option>
             <option value="presentiel">Présentiel</option>
             <option value="hybride">Hybride</option>
           </select>
