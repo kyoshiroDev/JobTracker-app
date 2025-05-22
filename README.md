@@ -45,6 +45,3 @@ En développant JobTracker, j'ai renforcé et acquis les compétences suivantes 
     ng serve
 ```
 L'application sera accessible à l'adresse http://localhost:4200/.
-
-## 🤝 Contribution
-Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou à soumettre une pull request pour proposer des améliorations ou corriger des bugs.
