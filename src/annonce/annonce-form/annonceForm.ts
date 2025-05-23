@@ -1,26 +1,26 @@
 import { FormControl, FormGroup } from '@angular/forms';
 
 export interface EntrepriseForm {
-  name: FormControl<string | null>;
-  ville: FormControl<string | null>;
-  phone: FormControl<string | null>;
-  email: FormControl<string | null>;
+  name: FormControl<string>;
+  ville: FormControl<string>;
+  phone: FormControl<string>;
+  email: FormControl<string>;
 }
 
 export interface ContentForm {
-  about: FormControl<string | null>;
-  descriptif: FormControl<string | null>;
-  competence: FormControl<string | null>;
-  avantage: FormControl<string | null>;
-  salaire: FormControl<string | null>;
-  typeContrat: FormControl<'CDI' | 'CDD' | 'Freelance' | 'Stage' | null>;
-  modeTravail: FormControl<'fullremote' | 'presentiel' | 'hybride' | null>;
-  status: FormControl<string | null>;
-  annonceLink: FormControl<string | null>;
+  about: FormControl<string>;
+  descriptif: FormControl<string>;
+  competence: FormControl<string>;
+  avantage: FormControl<string>;
+  salaire: FormControl<string>;
+  typeContrat: FormControl<'CDI' | 'CDD' | 'Freelance' | 'Stage' | ''>;
+  modeTravail: FormControl<'fullremote' | 'presentiel' | 'hybride' | ''>;
+  status: FormControl <'En attente' | 'Entretien' | 'À relancer' | 'Rejetée' | ''>;
+  annonceLink: FormControl<string>;
 }
 export interface AnnonceForm {
-  poste: FormControl<string | null>;
+  poste: FormControl<string>;
   entreprise: FormGroup<EntrepriseForm>;
   content: FormGroup<ContentForm>;
-  createdAt: FormControl<Date | null>;
+  createdAt: FormControl<Date>;
 }

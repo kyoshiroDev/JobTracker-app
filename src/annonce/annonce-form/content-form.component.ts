@@ -74,7 +74,7 @@ import {ContentForm} from './annonceForm';
             id="typeContrat"
             formControlName="typeContrat"
             class="border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all">
-            <option value='null' hidden>Contrat ...</option>
+            <option value='' hidden>Contrat ...</option>
             <option value="CDI">CDI</option>
             <option value="CDD">CDD</option>
             <option value="Freelance">Freelance</option>

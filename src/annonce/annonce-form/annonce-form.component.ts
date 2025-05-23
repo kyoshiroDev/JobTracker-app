@@ -92,29 +92,29 @@ export class AnnonceFormComponent {
   }
 
   protected readonly formAnnonce = this.fb.group<AnnonceForm>({
-    poste: this.fb.control(null),
+    poste: this.fb.control('', {nonNullable: true}),
     entreprise: this.fb.group<EntrepriseForm>({
-      name: this.fb.control(null),
-      ville: this.fb.control(null),
-      phone: this.fb.control(null),
-      email: this.fb.control(null),
+      name: this.fb.control('', {nonNullable: true}),
+      ville: this.fb.control('', {nonNullable: true}),
+      phone: this.fb.control('', {nonNullable: true}),
+      email: this.fb.control('', {nonNullable: true}),
     }),
     content: this.fb.group<ContentForm>({
-      about: this.fb.control(null),
-      descriptif: this.fb.control(null),
-      competence: this.fb.control(null),
-      avantage: this.fb.control(null),
-      salaire: this.fb.control(null),
-      typeContrat: this.fb.control<'CDI' | 'CDD' | 'Freelance' | 'Stage' | null>(null),
-      modeTravail: this.fb.control<'fullremote' | 'presentiel' | 'hybride' | null>(null),
-      annonceLink: this.fb.control(null),
-      status: this.fb.control('En attente'),
+      about: this.fb.control('', {nonNullable: true}),
+      descriptif: this.fb.control('', {nonNullable: true}),
+      competence: this.fb.control('', {nonNullable: true}),
+      avantage: this.fb.control('', {nonNullable: true}),
+      salaire: this.fb.control('', {nonNullable: true}),
+      typeContrat: this.fb.control<'CDI' | 'CDD' | 'Freelance' | 'Stage' | ''>('', {nonNullable: true}),
+      modeTravail: this.fb.control<'fullremote' | 'presentiel' | 'hybride' | ''>('', {nonNullable: true}),
+      annonceLink: this.fb.control('', {nonNullable: true}),
+      status: this.fb.control('En attente', {nonNullable: true}),
     }),
-    createdAt: this.fb.control<Date>(new Date(Date.now())),
+    createdAt: this.fb.control<Date>(new Date(Date.now()), {nonNullable: true}),
   });
 
-  onSubmit() {
-    const formDataAnnonce: any = this.formAnnonce.getRawValue();
+  onSubmit(): void {
+    const formDataAnnonce = this.formAnnonce.getRawValue();
     this.service.addAnnonce(formDataAnnonce);
     this.formAnnonce.reset();
     this.modalClose.emit();

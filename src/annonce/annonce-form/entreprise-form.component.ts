@@ -26,7 +26,7 @@ import {EntrepriseForm} from './annonceForm';
       <!-- Phone -->
       <div class="flex w-full flex-col justify-center items-start gap-2 flex-nowrap">
         <label for="phone">Téléphone :</label>
-        <input id="phone" type="number" formControlName="phone" placeholder="01.60.68.98.74"
+        <input id="phone" type="text" formControlName="phone" placeholder="01.60.68.98.74"
                class="w-full h-10 border border-gray-300 bg-white px-2 py-1 text-sm text-gray-900 rounded-xl focus:border-JobTracker-blue focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all"/>
       </div>
       <!-- Email -->

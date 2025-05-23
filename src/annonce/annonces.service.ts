@@ -14,7 +14,7 @@ export class AnnoncesService {
       entreprise: {
         name: 'Google',
         ville: 'Lyon',
-        phone: 128525,
+        phone: '128525',
         email: 'société@gmail.com',
       },
       content: {
@@ -24,7 +24,7 @@ export class AnnoncesService {
         avantage: 'Excellente maîtrise des technologies front-end, notamment Angular. Connaissances en développement back-end (Java) ou forte motivation pour apprendre. Expérience avec Docker et Git (GitLab). Autonomie, esprit d’équipe et force de proposition indispensables.',
         typeContrat: 'CDI',
         modeTravail: 'fullremote',
-        salaire: 35000,
+        salaire: '35000',
         annonceLink: '',
         status: 'En attente',
       },
@@ -36,7 +36,7 @@ export class AnnoncesService {
       entreprise: {
         name: 'Facebook',
         ville: 'Paris',
-        phone: 128525,
+        phone: '128525',
         email: 'société@gmail.com',
       },
 
@@ -47,7 +47,7 @@ export class AnnoncesService {
         avantage: 'Excellente maîtrise des technologies front-end, notamment Angular. Connaissances en développement back-end (Java) ou forte motivation pour apprendre. Expérience avec Docker et Git (GitLab). Autonomie, esprit d’équipe et force de proposition indispensables.',
         typeContrat: 'CDI',
         modeTravail: 'fullremote',
-        salaire: 40000,
+        salaire: '40000',
         annonceLink: '',
         status: 'Entretien',
       },
@@ -59,7 +59,7 @@ export class AnnoncesService {
       entreprise: {
         name: 'Amazon',
         ville: 'Nante',
-        phone: 128525,
+        phone: '128525',
         email: 'société@gmail.com',
       },
       content: {
@@ -69,7 +69,7 @@ export class AnnoncesService {
         avantage: 'Excellente maîtrise des technologies front-end, notamment Angular. Connaissances en développement back-end (Java) ou forte motivation pour apprendre. Expérience avec Docker et Git (GitLab). Autonomie, esprit d’équipe et force de proposition indispensables.',
         typeContrat: 'CDI',
         modeTravail: 'fullremote',
-        salaire: 50000,
+        salaire: '50000',
         annonceLink: '',
         status: 'En attente',
       },
@@ -82,7 +82,7 @@ export class AnnoncesService {
       entreprise: {
         name: 'Prestashop',
         ville: 'Bordeau',
-        phone: 25862541,
+        phone: '25862541',
         email: 'société@gmail.com',
       },
       content: {
@@ -92,7 +92,7 @@ export class AnnoncesService {
         avantage: 'Excellente maîtrise des technologies front-end, notamment Angular. Connaissances en développement back-end (Java) ou forte motivation pour apprendre. Expérience avec Docker et Git (GitLab). Autonomie, esprit d’équipe et force de proposition indispensables.',
         typeContrat: 'CDI',
         modeTravail: 'fullremote',
-        salaire: 45000,
+        salaire: '45000',
         annonceLink: '',
         status: 'À relancer',
       },
@@ -104,7 +104,7 @@ export class AnnoncesService {
       entreprise: {
         name: 'Netflix',
         ville: 'Dijon',
-        phone: 25862541,
+        phone: '25862541',
         email: 'société@gmail.com',
       },
       content: {
@@ -114,7 +114,7 @@ export class AnnoncesService {
         avantage: 'Excellente maîtrise des technologies front-end, notamment Angular. Connaissances en développement back-end (Java) ou forte motivation pour apprendre. Expérience avec Docker et Git (GitLab). Autonomie, esprit d’équipe et force de proposition indispensables.',
         typeContrat: 'CDI',
       modeTravail: 'fullremote',
-      salaire: 55000,
+      salaire: '55000',
       annonceLink: '',
       status: 'Rejetée',
       },
@@ -126,8 +126,8 @@ export class AnnoncesService {
     return this.annonces.asReadonly();
   }
 
-  addAnnonce(formDataAnnonce: Annonce) {
-    const newAnnonce: Annonce = {
+  addAnnonce(formDataAnnonce: Omit<Annonce, 'id'>): void {
+    const newAnnonce: Annonce= {
       ...formDataAnnonce,
       id: this.id() + 1,
       createdAt: new Date(formDataAnnonce.createdAt)

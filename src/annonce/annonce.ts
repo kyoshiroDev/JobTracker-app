@@ -1,7 +1,7 @@
 export interface Entreprise {
   name: string;
   ville: string;
-  phone: number;
+  phone: string;
   email: string;
 }
 
@@ -10,11 +10,11 @@ export interface Content {
   descriptif: string;
   competence: string;
   avantage: string;
-  salaire: number;
-  typeContrat: 'CDI' | 'CDD' | 'Freelance' | 'Stage';
-  modeTravail: 'fullremote' | 'presentiel' | 'hybride';
+  salaire: string;
+  typeContrat: 'CDI' | 'CDD' | 'Freelance' | 'Stage' | '';
+  modeTravail: 'fullremote' | 'presentiel' | 'hybride' | '';
   annonceLink: string;
-  status: 'En attente' | 'Entretien' | 'À relancer' | 'Rejetée';
+  status: 'En attente' | 'Entretien' | 'À relancer' | 'Rejetée' | '';
 }
 
 export interface Annonce {
